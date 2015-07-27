@@ -1,3 +1,3 @@
-# michael_devCamp
+# Developer Accelerator
 
 This is a repository for exercises and projects for a 12-week Python based developer bootcamp.

@@ -4,6 +4,7 @@
 # description: a description of the current room
 # doors: dictionary with door:location sets
 def process_user_movement(description, doors):
+
   # print the description of the current room
   print(description)
 
@@ -46,14 +47,16 @@ def process_user_movement(description, doors):
 
 #     # valid response: go to the correct location
 #     if choice.lower() in doors:
-#       doors[choice.lower()]()
+#       # doors[choice.lower()]()
+#       return doors[choice.lower()]()
 #     elif choice.lower() == "exit":
 #       print("Too tough for you, eh? Good-bye then.")
 
 #     # invalid response: ask them again
 #     else:
 #       print("I'm sorry, I did not understand.")
-#       exit()
+#       # exit()
+#       return exit()
 # """
 
 def fakeDoor():
@@ -64,25 +67,45 @@ def room1():
   doors = {"north":fakeDoor, "east":room2, "south":room3, "west":fakeDoor}
   process_user_movement(description, doors)
 
+# """
+#   return process_user_movement(description, doors)
+# """
+
 def room2():
   description = "\nYou are in ROOM TWO"
   doors = {"north":fakeDoor, "east":fakeDoor, "south":room4, "west":room1}
   process_user_movement(description, doors)
+
+# """
+#   return process_user_movement(description, doors)
+# """
 
 def room3():
   description = "\nYou are in ROOM THREE"
   doors = {"north":room1, "east":room4, "south":fakeDoor, "west":fakeDoor}
   process_user_movement(description, doors)
 
+# """
+#   return process_user_movement(description, doors)
+# """
+
 def room4():
   description = "\nYou are in ROOM FOUR"
   doors = {"north":room2, "east":fakeDoor, "south":room5, "west":room3}
   process_user_movement(description, doors)
 
+# """
+#   return process_user_movement(description, doors)
+# """
+
 def room5():
   description = "\nYou are in ROOM FIVE"
   doors = {"north":room4, "east":fakeDoor, "south":fakeDoor, "west":theEnd}
   process_user_movement(description, doors)
+
+# """
+#   return process_user_movement(description, doors)
+# """
 
 def theEnd():
   print("\nWell done, you have conquered THE MAZE!\n")
@@ -90,6 +113,13 @@ def theEnd():
 def theStart():
   print("\nWelcome to THE MAZE. Dare to escape!")
   room1()
+
+# """
+#  currentRoom = room1()
+#  while currentRoom != exit:
+#    currentRoom = currentRoom()
+#  currentRoom()
+# """
 
 theStart()
 

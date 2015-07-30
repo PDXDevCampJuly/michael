@@ -1,6 +1,8 @@
 # This is a maze program
 ###########################
 
+import random
+
 # description: a description of the current room
 # doors: dictionary with door:location sets
 def process_user_movement(description, doors):
@@ -62,9 +64,13 @@ def process_user_movement(description, doors):
 def fakeDoor():
   print("Ha ha, you ran into a wall!")
 
+def roomType():
+  type = random.choice(['BLUE', 'RED', 'GREEN', 'YELLOW', 'SMALL', 'BIG', 'ORANGE', 'LIVING', 'LAUNDRY', 'ASSEMBLY', 'WAITING', 'UTILITY', 'HOTEL', 'MEETING', 'SKY', 'RECREATION', 'PANTRY', 'MECHANICAL'])
+  return type
+
 def room1():
-  description = "\nYou are in ROOM ONE"
-  doors = {"north":fakeDoor, "east":room2, "south":room3, "west":fakeDoor}
+  description = "\nYou are in the {} ROOM".format(roomType())
+  doors = {"north": fakeDoor, "east": room2, "south": room3, "west": fakeDoor}
   process_user_movement(description, doors)
 
 # """
@@ -72,8 +78,8 @@ def room1():
 # """
 
 def room2():
-  description = "\nYou are in ROOM TWO"
-  doors = {"north":fakeDoor, "east":fakeDoor, "south":room4, "west":room1}
+  description = "\nYou are in the {} ROOM".format(roomType())
+  doors = {"north": fakeDoor, "east": fakeDoor, "south": room4, "west": room1}
   process_user_movement(description, doors)
 
 # """
@@ -81,8 +87,8 @@ def room2():
 # """
 
 def room3():
-  description = "\nYou are in ROOM THREE"
-  doors = {"north":room1, "east":room4, "south":fakeDoor, "west":fakeDoor}
+  description = "\nYou are in the {} ROOM".format(roomType())
+  doors = {"north": room1, "east": room4, "south": fakeDoor, "west": fakeDoor}
   process_user_movement(description, doors)
 
 # """
@@ -90,8 +96,8 @@ def room3():
 # """
 
 def room4():
-  description = "\nYou are in ROOM FOUR"
-  doors = {"north":room2, "east":fakeDoor, "south":room5, "west":room3}
+  description = "\nYou are in the {} ROOM".format(roomType())
+  doors = {"north": room2, "east": fakeDoor, "south": room5, "west": room3}
   process_user_movement(description, doors)
 
 # """
@@ -99,8 +105,8 @@ def room4():
 # """
 
 def room5():
-  description = "\nYou are in ROOM FIVE"
-  doors = {"north":room4, "east":fakeDoor, "south":fakeDoor, "west":theEnd}
+  description = "\nYou are in the {} ROOM".format(roomType())
+  doors = {"north": room4, "east": fakeDoor, "south": fakeDoor, "west": theEnd}
   process_user_movement(description, doors)
 
 # """

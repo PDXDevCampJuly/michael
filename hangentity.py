@@ -10,7 +10,7 @@ listedWord = [None]
 
 # A function that starts and plays the hangperson game.
 # Users can be wrong a maximum of 5 times before they lose,
-# the 6th wrong guess triggering Game Over.
+# the 6th wrong guess triggering Game Over.g
 def hangperson():
   global listedWord
 

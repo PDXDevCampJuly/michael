@@ -12,26 +12,17 @@ userRange = int(capture[0])
 def runTest(userRange):
   primes_list = []
 
-  for n in range(1, userRange):
-    if even(n) == "Pass":
-      if squareRoot(n) == "Pass":
-        primes_list.append(n)
+  for n in range(1, userRange, 2):
+    if squareRoot(n):
+      primes_list.append(n)
   # print(primes_list)
   print("Final count:", len(primes_list))
 
   makeFile(primes_list)
 
-def even(n):
-  if n % 2 == 0 or n == 2:
-    # print(n)
-    return "Fail"
-  else:
-    # print(n)
-    return "Pass"
-
 # make square root rounded-up for n
 def squareRoot(n):
-  num = n, ":", ceil(sqrt(n))
+  # num = n, ":", ceil(sqrt(n))
   numSqrt = ceil(sqrt(n))
   # print(num)
   return rangeSqrt(n, numSqrt)
@@ -39,22 +30,16 @@ def squareRoot(n):
 # take the square root and find range up to the sqrt
 def rangeSqrt(n, numSqrt):
   # print("rangeSqrt: ", n)
-  testRange = []
-  for i in range(2, numSqrt + 1):
-    testRange.append(i)
+  testRange = list(range(2, numSqrt + 1))
   # print(testRange)
   return finalTest(n, testRange)
 
 # run modulus test for the sqrt range
 def finalTest(n, testRange):
-  final_list = []
-  for num in testRange:
-    if n % num == 0:
-      final_list.append("Fail")
-    else:
-      final_list.append("Pass")
-  if not "Fail" in final_list:
-    return "Pass"
+  final_list = [num % n for n in testRange]
+  return 0 not in final_list
+
+# 0 not in [num % n for n in range(2, floor(sqrt(num)), 2)]
 
 # write to an external file
 def makeFile(list):

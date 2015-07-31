@@ -10,14 +10,14 @@ capture = argv[1:]
 userRange = int(capture[0])
 
 def runTest(userRange):
-  primes_list = []
+  primes_list = [2]
 
-  for n in range(1, userRange, 2):
+  # the range skips all evens
+  for n in range(3, userRange, 2):
     if squareRoot(n):
       primes_list.append(n)
   # print(primes_list)
   print("Final count:", len(primes_list))
-
   makeFile(primes_list)
 
 # make square root rounded-up for n
@@ -36,16 +36,17 @@ def rangeSqrt(n, numSqrt):
 
 # run modulus test for the sqrt range
 def finalTest(n, testRange):
-  final_list = [num % n for n in testRange]
+  final_list = [n % x for x in testRange]
   return 0 not in final_list
 
-# 0 not in [num % n for n in range(2, floor(sqrt(num)), 2)]
+# 0 not in [n % x for x in range(2, floor(sqrt(n)), 2)]
 
 # write to an external file
 def makeFile(list):
   # open, write, close file
   with open("primes.txt", 'w') as f:
-    f.write(list)
+    #   f.write("%s\n" % item)
+    f.write(str(list))
   print("Transfer complete.")
 
 runTest(userRange)

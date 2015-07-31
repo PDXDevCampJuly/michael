@@ -6,8 +6,7 @@ from math import sqrt
 from math import ceil
 
 # take input from user, convert to int
-capture = argv[1:]
-userRange = int(capture[0])
+userRange = int(argv[1])
 
 def runTest(userRange):
   primes_list = [2]
@@ -23,8 +22,8 @@ def runTest(userRange):
 # make square root rounded-up for n
 def squareRoot(n):
   # num = n, ":", ceil(sqrt(n))
-  numSqrt = ceil(sqrt(n))
   # print(num)
+  numSqrt = ceil(sqrt(n))
   return rangeSqrt(n, numSqrt)
 
 # take the square root and find range up to the sqrt
@@ -48,6 +47,16 @@ def makeFile(list):
     #   f.write("%s\n" % item)
     f.write(str(list))
   print("Transfer complete.")
+
+# alternate write method line-by-line
+# def makeFile(list):
+#   with open('primes.txt', 'w') as f:
+#     for p in list:
+#       f.write(str(p) + '\n')
+
+# alternatively - list comprehension method
+# def makeFile(list):
+  # f.write('\n'.join([str(p) for p in list]))
 
 runTest(userRange)
 

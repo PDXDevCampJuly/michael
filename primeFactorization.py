@@ -12,12 +12,15 @@ from collections import Counter
 
 filename = "primes.txt"
 
-capture = int(argv[1])
-n = int(capture[0])
+n = int(argv[1])
 
 # retrieve the primes.txt file
 with open(filename, "r") as f:
   primes_list = eval(f.read())
+
+# alternate method reading line-by-line
+# with open("primes.txt") as f:
+#   primes = f.read().split('\n')[:-1] # ignores last line of the file
 
 # make factors list
 def factorize(n, primes_list):
@@ -31,10 +34,24 @@ def factorize(n, primes_list):
   print(factors_list)
   print(Counter(factors_list))
 
+  concat =
+
 factorize(n, primes_list)
 
 # group multiples to signify "power of"
+# print "prime factors of %d are: " % target
+"""
+strs = []
+for factor in factorList:
+    strs.append(str(factor))
+# strs = [str(factor) for factor in factorList]
+print("{} =".format(target), " * ".join(strs))
 
+# format somewhat more nicely with Counters
+factors = Counter(factorList)
+output = ["{}^{}".format(x, factors[x]) if factors[x] > 1 else str(x) for x in sorted(list(factors.keys()))]
+print('{} ='.format(target), ' * '.join(output))
+"""
 
 
 

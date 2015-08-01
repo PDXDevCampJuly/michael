@@ -26,6 +26,9 @@ with open(filename, "r") as f:
 def factorize(n, primes_list):
   factors_list = []
 
+  while n < 2:
+    n = int(input("> Input integer greater than 1: "))git
+
   while n > 1:
     for prime in primes_list:
       if n % prime == 0:
@@ -34,7 +37,7 @@ def factorize(n, primes_list):
   print(factors_list)
   print(Counter(factors_list))
 
-  concat =
+  # concat =
 
 factorize(n, primes_list)
 

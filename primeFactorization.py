@@ -27,7 +27,7 @@ def factorize(n, primes_list):
   factors_list = []
 
   while n < 2:
-    n = int(input("> Input integer greater than 1: "))git
+    n = int(input("> Input integer greater than 1: "))
 
   while n > 1:
     for prime in primes_list:

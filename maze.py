@@ -10,6 +10,7 @@ selectedRestrictedDoor = ""
 fakeDoors_items ={}
 inventory = []
 userInput = ""
+currentRoom = ""
 
 # description: a description of the current room
 # doors: dictionary with door:location sets
@@ -36,10 +37,7 @@ def process_user_movement(description, doors, currentRoom):
 
     # valid response: go to the correct location
     try:
-      # print(selectedItem)
-      print("\ndoor with item:", selectedFakeDoor)
-      print("restricted door:", selectedRestrictedDoor, "\n")
-      # print("current room:", currentRoom)
+      print("---> currentRoom:", currentRoom)
       # # print("user input:", userInput)
       # # print(currentRoom in selectedFakeDoor)
       # # print(userInput in selectedFakeDoor)
@@ -91,19 +89,20 @@ def selectItem():
 # selects the fake door to hold the item
 def selectFakeDoor():
   global selectedFakeDoor
-  selectedFakeDoor = random.choice(['BLUE_north_fake', 'BLUE_west_fake', "RED_north_fake", "RED_east_fake", "GREEN_south_fake", "GREEN_west_fake", "YELLOW_east_fake", "ORANGE_east_fake", "ORANGE_south_fake"])
+  selectedFakeDoor = random.choice(['BLUE_north', 'BLUE_west', "RED_north", "RED_east", "GREEN_south", "GREEN_west", "YELLOW_east", "ORANGE_east", "ORANGE_south"])
   # print(selectedFakeDoor)
 
 # selects the door that needs the random item
 def selectRestrictedDoor():
   global selectedRestrictedDoor
-  selectedRestrictedDoor = random.choice(['BLUE_east', 'BLUE_south', "RED_south", "RED_west", "GREEN_north", "GREEN_east", "YELLOW_north", "YELLOW_south", "YELLOW_west", "ORANGE_north", "ORANGE_west"])
+  selectedRestrictedDoor = random.choice(['BLUE_east', 'BLUE_south', "RED_south", "RED_west", "GREEN_north", "GREEN_east", "YELLOW_north", "YELLOW_south", "YELLOW_west", "ORANGE_west"])
   # print(selectedRestrictedDoor)
 
 def room1():
-  description = "You are in the {} ROOM".format("BLUE")
+  global currentRoom
+  currentRoom = "BLUE"
+  description = "\nYou are in the {} ROOM".format(currentRoom)
   doors = {'north': fakeDoor, 'east': room2, 'south': room3, 'west': fakeDoor}
-  currentRoom = "blue"
   process_user_movement(description, doors, currentRoom)
 
 # """
@@ -111,9 +110,10 @@ def room1():
 # """
 
 def room2():
-  description = "You are in the {} ROOM".format("RED")
+  global currentRoom
+  currentRoom = "RED"
+  description = "\nYou are in the {} ROOM".format(currentRoom)
   doors = {'north': fakeDoor, 'east': fakeDoor, 'south': room4, 'west': room1}
-  currentRoom = "red"
   process_user_movement(description, doors, currentRoom)
 
 # """
@@ -121,9 +121,10 @@ def room2():
 # """
 
 def room3():
-  description = "You are in the {} ROOM".format("GREEN")
+  global currentRoom
+  currentRoom = "GREEN"
+  description = "\nYou are in the {} ROOM".format(currentRoom)
   doors = {'north': room1, 'east': room4, 'south': fakeDoor, 'west': fakeDoor}
-  currentRoom = "blue"
   process_user_movement(description, doors, currentRoom)
 
 # """
@@ -131,9 +132,10 @@ def room3():
 # """
 
 def room4():
-  description = "You are in the {} ROOM".format("YELLOW")
+  global currentRoom
+  currentRoom = "YELLOW"
+  description = "\nYou are in the {} ROOM".format(currentRoom)
   doors = {'north': room2, 'east': fakeDoor, 'south': room5, 'west': room3}
-  currentRoom = "yellow"
   process_user_movement(description, doors, currentRoom)
 
 # """
@@ -141,9 +143,10 @@ def room4():
 # """
 
 def room5():
-  description = "You are in the {} ROOM".format("ORANGE")
+  global currentRoom
+  currentRoom = "ORANGE"
+  description = "\nYou are in the {} ROOM".format(currentRoom)
   doors = {'north': room4, 'east': fakeDoor, 'south': fakeDoor, 'west': theEnd}
-  currentRoom = "orange"
   process_user_movement(description, doors, currentRoom)
 
 # """
@@ -151,13 +154,15 @@ def room5():
 # """
 
 def theEnd():
-  print("\nWell done, you have conquered THE MAZE!\n")
+  print("\nWell done, you have conquered THE MAZE!")
 
 def theStart():
   print("\nWelcome to THE MAZE. Dare to escape!\n")
   selectItem()
   selectFakeDoor()
   selectRestrictedDoor()
+  print("---> {} in the {}".format(selectedItem, selectedFakeDoor))
+  print("---> Restricted:", selectedRestrictedDoor)
   room1()
 
 theStart()

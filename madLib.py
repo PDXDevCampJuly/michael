@@ -55,7 +55,7 @@ theInput = input("Please type the plural form of a 'shape'" + prompt)
 article += space + theInput
 
 article += ". Some kids like "
-theInput = input("Please type a type of 'food'" + prompt)
+theInput = input("Please type a kind of 'food'" + prompt)
 article += theInput
 
 article += " pizza the best but my favorite is "

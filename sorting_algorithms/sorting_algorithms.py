@@ -28,7 +28,6 @@ def selection_sort(our_list):
     Look through the list.  Find the smallest element.  Swap it to the front.
     Repeat.
     """
-
     # find the smallest
     # for start in range(len(our_list)):
     #     mindex = start
@@ -42,14 +41,15 @@ def selection_sort(our_list):
     # return our_list
 
     # len of the list is len - 1 as you move to the right
-    for lowest_item in range(len(our_list) - 1):
-        first_item = lowest_item
-        for i in range(lowest_item + 1, len(our_list)):
-            if our_list[i] < our_list[first_item]:
-                first_item = i
+    for start_item in range(len(our_list) - 1):
+        min_position = start_item
+        for i in range(start_item + 1, len(our_list)):
+            if our_list[i] < our_list[min_position]:
+                min_position = i
 
-        list_swap(our_list, lowest_item, first_item)
+        list_swap(our_list, start_item, min_position)
     return our_list
+# print(selection_sort(our_list))
 
 
 def insertion_sort(our_list):
@@ -66,14 +66,28 @@ def insertion_sort(our_list):
                 comparison_index -= 1
             else:
                 break
-        return our_list
+    return our_list
+# print(insertion_sort(our_list))
 
 
 def merge_sort(our_list):
     """
-    Our first recursive algorithm.
+    Our first recursive algorithm. Divide and conquer
     """
-    pass
+    middle = len(our_list)
+    print(middle)
 
-print(selection_sort(our_list))
+
+print()
+
+
+def linear_search(x, our_list):
+    """
+    Searching through the list of items one by one until the target value is found.
+    """
+    for i in range(len(our_list)):
+        if our_list[i] == x: # item found, return the index value
+            return i
+    return -1 # loop finished, item was not in list
+# print(linear_search(8, our_list))
 

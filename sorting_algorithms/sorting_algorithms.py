@@ -2,12 +2,9 @@
 ##########################
 
 from sys import argv
+import time
 
 filename = (argv[1])
-
-# retrieve the char10.txt file
-with open(filename, "r") as f:
-  our_list = eval(f.read())
 
 
 # python sorting algorithm
@@ -41,7 +38,6 @@ def selection_sort(our_list):
         list_swap(our_list, start_index, lowest_index)
 
     return our_list
-# print(selection_sort(our_list))
 
 
 def insertion_sort(our_list):
@@ -60,7 +56,6 @@ def insertion_sort(our_list):
         our_list[position_index] = min_value
 
     return our_list
-# print(insertion_sort(our_list))
 
 
 def merge_sort(our_list):
@@ -71,16 +66,21 @@ def merge_sort(our_list):
     if len(our_list) == 1:
         return our_list
 
-    # integer division, floor
+    # integer division //, floor
     middle = len(our_list) // 2
     list1 = merge_sort(our_list[:middle])
     list2 = merge_sort(our_list[middle:])
 
+    list3 = []
 
+    while len(list1) > 0 and len(list2) > 0:
+        if list1[0] < list2[0]:
+            list3.append(list1.pop(0))
+        else:
+            list3.append(list2.pop(0))
+    list3 += list1 + list2
 
-
-print(merge_sort(our_list))
-
+    return list3
 
 def linear_search(x, our_list):
     """
@@ -89,6 +89,19 @@ def linear_search(x, our_list):
     for i in range(len(our_list)):
         if our_list[i] == x: # item found, return the index value
             return i
+
     return -1 # loop finished, item was not in list
+
+
+# retrieve a file
+if __name__ == '__main__':
+
+    with open(filename, "r") as f:
+      our_list = eval(f.read())
+
+
+# print(selection_sort(our_list))
+# print(insertion_sort(our_list))
+print(merge_sort(our_list))
 # print(linear_search(8, our_list))
 

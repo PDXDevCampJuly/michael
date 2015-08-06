@@ -7,12 +7,11 @@ class Account:
   """
   Account class that stores account info.
   """
-
   def __init__(self, balance, account_type = "checking"):
     self.balance = balance
     self.account_type = account_type.capitalize()
 
-    print("\nWelcome. {} account established. Current balance is: {}".format(self.account_type, self.print_balance()))
+    print("\n{} account established. Current balance is: {}".format(self.account_type, self.print_balance()))
 
   def deposit(self, money):
     self.balance += money
@@ -39,8 +38,8 @@ class Person:
   """
   # initializes the Person class
   def __init__(self, first_name, last_name, email):
-    self.first = first_name
-    self.last = last_name
+    self.first_name = first_name
+    self.last_name = last_name
     self.email = email
     self.accounts = {}
 
@@ -53,7 +52,7 @@ class Person:
     if account_name.lower() not in self.accounts:
       print(">>> '{}' account type does not exist. Try again.\n".format(account_name))
     if account_name.lower() in self.accounts:
-      confirmation = input("Type YES to confirm {} account closure. NO to cancel: ".format(account_name.title()))
+      confirmation = input("Type YES to confirm '{}' account closure. NO to cancel: ".format(account_name.title()))
       if confirmation.lower() == "yes":
         del self.accounts[account_name.lower()]
         print("'{}' account closed. Have a good day!\n".format(account_name.title()))
@@ -65,10 +64,10 @@ class Person:
     Display on the screen all of a Person's account info
     """
     if len(self.accounts) == 0:
-      print(">>> No accounts established for {} {}\n".format(self.first, self.last))
+      print(">>> No accounts established for {} {}\n".format(self.first_name, self.last_name))
     else:
-      print("Account(s) for {} {}".format(self.first, self.last))
-      print("----------------------------------")
+      print("Account(s) for {} {}:".format(self.first_name, self.last_name))
+      print("---------------")
       for k, v in self.accounts.items():
         print("{} >>> {}".format(k.title(), v.print_balance()))
 
@@ -77,34 +76,37 @@ class Bank:
   """
   Bank class handles the Accounts and Persons.
   """
-
   def __init__(self):
     self.customers = {}
     self.savings_interest = 1.07
 
   def new_customer(self, first_name, last_name, email):
     new_customer = Person(first_name, last_name, email)
-    customers[email] = new_customer
-    pass
+    self.customers[email.lower()] = new_customer
 
   def remove_customer(self, email):
-    pass
+    del self.customers[email.lower()]
 
   def show_customer_info(self, email):
-    pass
+    self.customers[email].show_accounts()
 
-  def customer_deposit(self, email, money, account_name):
-    pass
-
-  def customer_withdraw(self, email, money, account_name):
-    pass
-
-  def make_customer_account(self, email, money, account_name):
-    pass
+  def make_customer_account(self, email, money, account_name, account_type="checking"):
+    self.customers[email.lower()].open_account(money, account_name, account_type)
 
   def remove_customer_account(self, email, account_name):
-    pass
+    self.customers[email.lower()].close_account(account_name)
 
+  def customer_deposit(self, email, money, account_name):
+    self.customers[email.lower()].deposit(money, account_name)
+
+  def customer_withdraw(self, email, money, account_name):
+    self.customers[email.lower()].withdraw(money, account_name)
+
+
+
+
+# TESTS
+# >>>------------------------------------->
 # myAccount = Account(1000, "Michael")
 # myAccount.deposit(50)
 # myAccount.withdraw(75)
@@ -112,14 +114,20 @@ class Bank:
 # myAccount.interest(20)
 # myAccount.print_balance()
 
-me = Person("Michael", "Williams", "me@gmail.com")
-me.open_account(1000, "Car Fund", "savings")
-me.open_account(2000, "House Fund", "savings")
+# me = Person("Michael", "Williams", "me@gmail.com")
+# me.open_account(1000, "Car Fund", "savings")
+# me.open_account(2000, "House Fund", "savings")
 # me.show_accounts()
 # me.close_account("Checking")
 # me.show_accounts()
-me.close_account("Car fund")
+# me.close_account("Car fund")
 # me.show_accounts()
+
+myBank = Bank() # make a bank
+mw = myBank.new_customer("Michael", "Williams", "mw@email.com")
+myBank.show_customer_info("mw@email.com")
+myBank.make_customer_account("mw@email.com", 1000, "Car Fund")
+myBank.customer_deposit("mw@email.com", 1000, "Car Fund")
 
 
 

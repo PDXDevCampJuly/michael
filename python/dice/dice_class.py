@@ -14,7 +14,7 @@ class Die():
     make a new die based on the list passed by the user
     """
     self.possibleValues = possibleValues
-    self.possibleValues.append("test5")
+    # self.possibleValues.append("test5")
     self.roll()
 
   def roll(self):
@@ -31,8 +31,8 @@ class Die():
     """
     return self.currentValue
 
-myDie = Die(["heart", "club", "diamond", "spade"])
-print(myDie)
+# myDie = Die(["heart", "club", "diamond", "spade"])
+# print(myDie)
 
 
 

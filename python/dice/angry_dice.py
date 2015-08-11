@@ -4,41 +4,84 @@
 
 from dice_class import Die
 
-die_a = Die(["1", "2", "ANGRY", "4", "5", "6"])
-die_b = Die(["1", "2", "ANGRY", "4", "5", "6"])
-
 class Launch():
-
-  def __init__(self, die_a, die_b):
-    self.die_a = die_a
-    self.die_b = die_b
-    print(die_a)
-    print(die_b)
-    user = Player()
-    self.instructions()
-
-  def instructions(self):
-    print("Welcome to the ANGRY Dice Arena.")
-    print("ANGRY Dice is a real-time dice rolling microgame.")
-    print("The object is to be the first to six by rolling your dice in ascending order pairs.")
-    print("You and your competitor each have two dice they can roll.")
-    print("You can lock a die (except a 6), if it rolls to something they you will need.")
-    print("You are required to start at the beginning if you ever roll double ANGRY Faces (the 3).")
-    print("The game consists of three rounds.")
-    print("Round 1: Roll a 1 and a 2.")
-    print("Round 2: Roll an ANGRY (the 3) and a 4.")
-    print("Round 3: Roll a 5 then a 6.")
-    print("Meet the requirements for each round and move on.")
-    input("Good luck {}. Press Enter to continue... ".format(self.player_name))
-
-class Player():
+  """
+  Launches the game of ANGRY dice
+  """
 
   def __init__(self):
-    self.get_name()
+    self.die_a = Die(["1", "2", "ANGRY", "4", "5", "6"])
+    self.die_b = Die(["1", "2", "ANGRY", "4", "5", "6"])
+    self.instructions()
+    self.print_results()
+    # self.test_stage(die_a, die_b)
 
-  def get_name(self):
-    self.player_name = input("Input your name: ")
+  def instructions(self):
+    print("Welcome to Angry Dice! Roll the two dice until you get thru the 3 Stages!")
+    print("Stage 1 you need to roll 1 & 2")
+    print("Stage 2 you need to roll ANGRY & ")
+    print("Stage 3 you need to roll 5 & 6")
+    print("You can lock a die needed for your current stage and just roll the other one, but beware!")
+    print("If you ever get 2 ANGRY's at once, you have to restart to Stage 1! Also, you can never lock a 6! That's cheating!")
+    print("To roll the dice, simply input the name of the die you want to roll. Their names are a and b.")
+    input("Press ENTER to start! ")
 
-Launch(die_a, die_b)
-player = Player()
+  def print_results(self):
+    print("-------------------------------\n")
+    print("You rolled:")
+    print("a = ", self.die_a)
+    print("b = ", self.die_b)
+    print("-------------------------------\n")
+    self.user_input()
+
+  def user_input(self):
+    """
+    Take the user input and allow for the user to stay or roll
+    """
+    userInput_list = []
+    userInput = ""
+    while "a" not in userInput or "b" not in userInput:
+      userInput = input("Decision: ")
+      userInput_list.append(userInput)
+      if "a" in userInput and "b" in userInput:
+        self.die_a.roll()
+        self.die_b.roll()
+        self.test_stage(self.die_a, self.die_b)
+        break
+      elif "a" in userInput:
+        self.die_a.roll()
+        self.test_stage(self.die_a, self.die_b)
+        break
+      elif "b" in userInput:
+        self.die_b.roll()
+        self.test_stage(self.die_a, self.die_b)
+        break
+      else:
+        print("I do not understand, try again: ")
+    self.print_results()
+
+
+  def test_stage(self, die_a, die_b):
+    """
+    Test the userInput for each roll to determine the status of game
+    """
+    # always test for a reset to level one
+    if self.die_a == 3 and self.die_b == 3:
+      print("reset game")
+
+    # stage 1
+    if (self.die_a == 1 and self.die_a == 2) or (self.die_a == 2 and self.die_b == 1):
+      print("move on to stage 2")
+
+  # def stage_2(die_a, die_b):
+  #   if self.die_a == 3 and self.die_b == 4:
+
+
+  # def stage_3(die_a, die_b):
+  #   if self.die_a == 5 and self.die_b == 6:
+
+
+
+
+launchGame = Launch()
 

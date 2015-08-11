@@ -14,6 +14,7 @@ class Die():
     make a new die based on the list passed by the user
     """
     self.possibleValues = possibleValues
+    self.possibleValues.append("test5")
     self.roll()
 
   def roll(self):

@@ -19,7 +19,7 @@ class Launch():
   def instructions(self):
     print("Welcome to Angry Dice! Roll the two dice until you get thru the 3 Stages!")
     print("Stage 1 you need to roll 1 & 2")
-    print("Stage 2 you need to roll ANGRY & ")
+    print("Stage 2 you need to roll ANGRY & 4")
     print("Stage 3 you need to roll 5 & 6")
     print("You can lock a die needed for your current stage and")
     print("just roll the other one, but beware!")
@@ -27,22 +27,14 @@ class Launch():
     print("to Stage 1! Also, you can never lock a 6! That's cheating!")
     print("To roll the dice, simply input the name of the die")
     print("you want to roll. Their names are a and b.\n")
-    input("Press ENTER to start! ")
-
-
-  def initial_values(self):
-    print("-------------------------------\n")
-    print("Initial Values:")
-    print("a = ", self.die_a)
-    print("b = ", self.die_b)
-    self.user_input()
+    input("Press ENTER to start!\n")
 
 
   def print_results(self):
     print("-------------------------------")
     print("You rolled:")
-    print("a = ", self.die_a)
-    print("b = ", self.die_b)
+    print("a = [  {}  ]".format(self.die_a))
+    print("b = [  {}  ]".format(self.die_b))
     self.user_input()
 
 
@@ -73,7 +65,6 @@ class Launch():
         break
       else:
         print("I do not understand, try again: ")
-
 
     self.print_results()
 
@@ -155,5 +146,5 @@ class Launch():
 if __name__ == "__main__":
   launchGame = Launch()
   launchGame.instructions()
-  launchGame.initial_values()
+  launchGame.print_results()
 

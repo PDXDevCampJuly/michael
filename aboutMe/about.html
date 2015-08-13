@@ -6,11 +6,13 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
   <style type="text/css">
+
+    /* layout */
     body {
       background-color:#eee;
-      color:#333;
+      color: #333;
       font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-      margin: 25px 20%;
+      margin: 0 20% 25px;
     }
     h1 {
       color:#bbb;
@@ -22,7 +24,48 @@
       padding: 25px 10%;
       margin: 25px 0;
       border-right: 5px solid rgba(153,153,153,0.3);
-      border-bottom: 5px solid rgba(153,153,153,0.3)
+      border-bottom: 5px solid rgba(153,153,153,0.3);
+    }
+
+    /* nav */
+    nav {
+      width: 100%;
+      text-align: center;
+      font-size: 1.2em;
+      margin-top: 10px;
+      margin-bottom: 35px;
+    }
+    nav li {
+      background-color: #eee;
+      color: #999;
+      display: inline-block;
+      width: 33%;
+    }
+    nav li a {
+      text-decoration: none;
+      display: inline-block;
+      color: #999;
+      heigth: 100%;
+      width: 100%;
+    }
+
+    /* header */
+    header {
+      width: 100%;
+    }
+    img[alt="profile"] {
+      border-radius: 20px;
+      width: 75%;
+      border-right: 5px solid rgba(153,153,153,0.3);
+      border-bottom: 5px solid rgba(153,153,153,0.3);
+      width: 100%;
+    }
+
+    /* section introduction */
+    p:nth-child(1)::first-letter {
+      font-weight: bold;
+      color: #ccc;
+      font-size: 4em;
     }
     blockquote {
       background: #f9f9f9;
@@ -43,27 +86,64 @@
     blockquote p {
       display: inline;
     }
+
+    /* section technical competencies */
+    ul:nth-child(3) {
+      padding-left: 0;
+    }
     li {
       color: #999;
       list-style: none;
     }
-    img[alt="profile"] {
-      border-radius: 20px;
+    li h4 {
+      color: #333;
     }
+
+    /* footer */
     img[alt="twitter icon to connect"] {
       width: 50px;
-      margin:50px 50% 25px;
+      margin: 25px 50%;
     }
     footer {
-      align: right;
+      text-align: right;
     }
+
+    /* media queries */
+    @media screen and (max-width: 600px) {
+      body {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      nav {
+        margin-bottom: 0;
+      }
+      nav li {
+        width: 20%;
+      }
+      section, header {
+        width: 100%;
+        border: none;
+        border-radius: initial;
+        padding: 1% 10%;
+        margin: 5px;
+      }
+      img[alt="profile"] {
+        display: none;
+      }
+    }
+
   </style>
 </head>
 
 <body>
-  <article>
+  <nav>
+    <li><a href="#">about</a></li><li><a href="../tiffany_devCamp/corgi webpage/corgi.html">corg</a></li><li><a href="../baseJumping/base.html">base</a></li>
+  </nav>
+  <header>
     <h1>about</h1>
     <img src="profile_300px.jpg" alt="profile" />
+  </header>
+  <article>
     <section>
       <p>Hi, I'm Michael Williams.</p>
       <p>Python-based full-stack developer with a background in finances and healthcare. When I am not coding, I enjoy volunteering, exercising, exploring Oregon, and traveling. Through professional development, volunteering, and consulting roles, my mantra as a programmer is to help organizations use technology to solve real business problems.</p>
@@ -102,8 +182,13 @@
       </ul>
     </section>
   </article>
-  <a href="https://twitter.com/michael_mdw"><img src="twitter.svg" alt="twitter icon to connect" /></a>
-  <footer>&copy; 2015 michael williams</footer>
+
+  <footer>
+    <a href="https://twitter.com/michael_mdw">
+      <img src="twitter.svg" alt="twitter icon to connect" />
+    </a>
+    <p>&copy; 2015 michael williams</p>
+  </footer>
 </body>
 
 </html>

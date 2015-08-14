@@ -4,155 +4,28 @@
 <head>
   <title>about | michael williams</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-  <style type="text/css">
-
-    /* layout */
-    body {
-      background-color:#eee;
-      color: #333;
-      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-      margin: 0 20% 25px;
-    }
-    h1 {
-      color:#bbb;
-      font-size: 2em;
-    }
-    section {
-      background-color: #f9f9f9;
-      border-radius: 20px;
-      padding: 25px 10%;
-      margin: 25px 0;
-      border-right: 5px solid rgba(153,153,153,0.3);
-      border-bottom: 5px solid rgba(153,153,153,0.3);
-    }
-
-    /* nav */
-    nav {
-      width: 100%;
-      text-align: center;
-      font-size: 1.2em;
-      margin-top: 10px;
-      margin-bottom: 35px;
-    }
-    nav li {
-      background-color: #eee;
-      color: #999;
-      display: inline-block;
-      width: 33%;
-    }
-    nav li a {
-      text-decoration: none;
-      display: inline-block;
-      color: #999;
-      heigth: 100%;
-      width: 100%;
-    }
-
-    /* header */
-    header {
-      width: 100%;
-    }
-    img[alt="profile"] {
-      border-radius: 20px;
-      width: 75%;
-      border-right: 5px solid rgba(153,153,153,0.3);
-      border-bottom: 5px solid rgba(153,153,153,0.3);
-      width: 100%;
-    }
-
-    /* section introduction */
-    p:nth-child(1)::first-letter {
-      font-weight: bold;
-      color: #ccc;
-      font-size: 4em;
-    }
-    blockquote {
-      background: #f9f9f9;
-      border-left: 10px solid #ccc;
-      margin: 1.5em 0;
-      padding: 0.5em 10px;
-      quotes: "\201C""\201D""\2018""\2019";
-    }
-    blockquote:before {
-      color: #ccc;
-      content: open-quote;
-      font-size: 4em;
-      line-height: 0.1em;
-      margin-right: 0.25em;
-      vertical-align: -0.4em;
-      font-family: sans-serif;
-    }
-    blockquote p {
-      display: inline;
-    }
-
-    /* section technical competencies */
-    ul:nth-child(3) {
-      padding-left: 0;
-    }
-    li {
-      color: #999;
-      list-style: none;
-    }
-    li h4 {
-      color: #333;
-    }
-
-    /* footer */
-    img[alt="twitter icon to connect"] {
-      width: 50px;
-      margin: 25px 50%;
-    }
-    footer {
-      text-align: right;
-    }
-
-    /* media queries */
-    @media screen and (max-width: 600px) {
-      body {
-        margin-left: 0;
-        margin-right: 0;
-      }
-      nav {
-        margin-bottom: 0;
-      }
-      nav li {
-        width: 20%;
-      }
-      section, header {
-        width: 100%;
-        border: none;
-        border-radius: initial;
-        padding: 1% 10%;
-        margin: 5px;
-      }
-      img[alt="profile"] {
-        display: none;
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
   <nav>
-    <li><a href="#">about</a></li><li><a href="../tiffany_devCamp/corgi webpage/corgi.html">corg</a></li><li><a href="../baseJumping/base.html">base</a></li>
+    <li><a href="#" class="selected">about</a></li><li><a href="../tiffany_devCamp/corgi webpage/corgi.html">corg</a></li><li><a href="../baseJumping/base.html">base</a></li>
   </nav>
   <header>
     <h1>about</h1>
-    <img src="profile_300px.jpg" alt="profile" />
+    <img src="profile_300px.jpg" alt="profile picture NL" />
   </header>
   <article>
     <section>
       <p>Hi, I'm Michael Williams.</p>
+
       <p>Python-based full-stack developer with a background in finances and healthcare. When I am not coding, I enjoy volunteering, exercising, exploring Oregon, and traveling. Through professional development, volunteering, and consulting roles, my mantra as a programmer is to help organizations use technology to solve real business problems.</p>
       <blockquote>
         <p>Find a way to learn something new each day</p>
       </blockquote>
     </section>
     <section>
-      <h3>Technical Competencies</h3>
+      <h2>Technical Competencies</h2>
       <h4>Scripting and Programming Languages, Software, Systems, Best Practices</h4>
       <ul>
         <li>

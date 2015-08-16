@@ -38,7 +38,6 @@ class AngryDice():
     text += "you want to roll. Their names are a and b.\n"
     print(text)
     input("Press ENTER to start!\n")
-    print("You are in Stage 1")
 
 
   def play(self):
@@ -58,27 +57,6 @@ class AngryDice():
       # if "a" in self.userInput:
       #   self.a.roll()
 
-    # self.print_results()
-
-
-  def print_results(self):
-    """
-    Outputs status of the game
-    """
-
-    # print("You are in Stage {}").format(stage)
-    print("-------------------------------")
-    print("You rolled:")
-    print("a = [  {}  ]".format(self.a))
-    print("b = [  {}  ]".format(self.b))
-    # print("\n {}".format(next_action))
-    self.get_user_input() #
-
-  # def next_action(self):
-
-
-
-  def get_user_input(self):
     """
     Take the user input and allow for the user to stay or roll
     """
@@ -91,18 +69,41 @@ class AngryDice():
     while True:
       self.userInput = input("\nRoll dice: ")
 
-      if "a" in self.userInput:
+
+      if "a" in self.userInput and "b" in self.userInput:
+        self.a.roll()
+        self.b.roll()
+        self.check_input(self.a, self.b)
+        self.print_results()
+
+      elif "a" in self.userInput:
         self.a.roll()
         self.check_input(self.a, self.b)
-        break
+        self.print_results()
+
       elif "b" in self.userInput:
         self.b.roll()
         self.check_input(self.a, self.b)
-        break
+        self.print_results()
+
       else:
         print("I do not understand, try again: ")
 
-    self.print_results()
+
+  def print_results(self):
+    """
+    Outputs status of the game
+    """
+
+    print("\nYou are in Stage {}".format(self.stage))
+    print("-------------------------------")
+    print("You rolled:")
+    print("a = [  {}  ]".format(self.a))
+    print("b = [  {}  ]".format(self.b))
+    # print("\n {}".format(next_action))
+    # self.get_user_input() #
+
+  # def next_action(self):
 
 
   def check_input(self, a, b):
@@ -119,7 +120,7 @@ class AngryDice():
     # always check for a reset to stage one
     if a == "ANGRY" and b == "ANGRY":
       print("\nWOW, you're ANGRY!")
-      print("Time to go back to Stage 1!")
+      print("Time to go back to Stage 1!\n")
       self.stage = 1
       return
 
@@ -157,10 +158,8 @@ class AngryDice():
     a = self.a.currentValue
     b = self.b.currentValue
 
-    print("\nYou are in Stage 1")
     if (a == "1" and b == "2") or (a == "2" and b == "1"):
       self.stage = 2
-      print("\nYou are in Stage 2")
 
 
   def stage_2(self, a, b):
@@ -171,10 +170,8 @@ class AngryDice():
     a = self.a.currentValue
     b = self.b.currentValue
 
-    print("\nYou are in Stage 2")
     if (a == "ANGRY" and b == "4") or (a == "4" and b == "ANGRY"):
       self.stage = 3
-      print("\nYou are in Stage 3")
 
 
   def stage_3(self, a, b):
@@ -185,9 +182,7 @@ class AngryDice():
     a = self.a.currentValue
     b = self.b.currentValue
 
-    print("\nYou are in Stage 3")
     if (a == "5" and b == "6") or (a == "6" and b == "5"):
-      print("\nYou are in Stage 3")
       print("-------------------------------")
       print("-------------------------------")
       print("You've won! Calm down!")

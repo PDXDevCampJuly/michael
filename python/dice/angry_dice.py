@@ -54,17 +54,28 @@ class AngryDice():
 
     # self.get_user_input()
 
+    # while True:
+      # if "a" in self.userInput:
+      #   self.a.roll()
+
+    # self.print_results()
+
 
   def print_results(self):
     """
-    Output status of the game
+    Outputs status of the game
     """
 
+    # print("You are in Stage {}").format(stage)
     print("-------------------------------")
     print("You rolled:")
     print("a = [  {}  ]".format(self.a))
     print("b = [  {}  ]".format(self.b))
+    # print("\n {}".format(next_action))
     self.get_user_input() #
+
+  # def next_action(self):
+
 
 
   def get_user_input(self):
@@ -80,12 +91,7 @@ class AngryDice():
     while True:
       self.userInput = input("\nRoll dice: ")
 
-      if "a" in self.userInput and "b" in self.userInput:
-        self.a.roll()
-        self.b.roll()
-        self.check_input(self.a, self.b)
-        break
-      elif "a" in self.userInput:
+      if "a" in self.userInput:
         self.a.roll()
         self.check_input(self.a, self.b)
         break

@@ -17,16 +17,18 @@ class AngryDice():
 
 
   def instructions(self):
-    print("Welcome to Angry Dice! Roll the two dice until you get thru the 3 Stages!")
-    print("Stage 1 you need to roll 1 & 2")
-    print("Stage 2 you need to roll ANGRY & 4")
-    print("Stage 3 you need to roll 5 & 6")
-    print("You can lock a die needed for your current stage and")
-    print("just roll the other one, but beware!")
-    print("If you ever get 2 ANGRY's at once, you have to restart")
-    print("to Stage 1! Also, you can never lock a 6! That's cheating!")
-    print("To roll the dice, simply input the name of the die")
-    print("you want to roll. Their names are a and b.\n")
+    text = ""
+    text += "Welcome to Angry Dice! Roll the two dice until you get thru the 3 Stages!\n"
+    text += "Stage 1 you need to roll 1 & 2\n"
+    text += "Stage 2 you need to roll ANGRY & 4\n"
+    text += "Stage 3 you need to roll 5 & 6\n"
+    text += "You can lock a die needed for your current stage and\n"
+    text += "just roll the other one, but beware!\n"
+    text += "If you ever get 2 ANGRY's at once, you have to restart\n"
+    text += "to Stage 1! Also, you can never lock a 6! That's cheating!\n"
+    text += "To roll the dice, simply input the name of the die\n"
+    text += "you want to roll. Their names are a and b.\n"
+    print(text)
     input("Press ENTER to start!\n")
 
 

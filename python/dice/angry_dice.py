@@ -33,15 +33,22 @@ class AngryDice():
     print("You are in Stage 1")
 
 
+  def play(self):
+    self.instructions()
+    self.print_results()
+
+    self.get_user_input()
+
+
   def print_results(self):
     print("-------------------------------")
     print("You rolled:")
     print("a = [  {}  ]".format(self.a))
     print("b = [  {}  ]".format(self.b))
-    self.user_input()
+    # self.user_input()
 
 
-  def user_input(self):
+  def get_user_input(self):
     """
     Take the user input and allow for the user to stay or roll
     """
@@ -57,15 +64,15 @@ class AngryDice():
       if "a" in userInput and "b" in userInput:
         self.a.roll()
         self.b.roll()
-        self.test_input(self.a, self.b)
+        self.check_input(self.a, self.b)
         break
       elif "a" in userInput:
         self.a.roll()
-        self.test_input(self.a, self.b)
+        self.check_input(self.a, self.b)
         break
       elif "b" in userInput:
         self.b.roll()
-        self.test_input(self.a, self.b)
+        self.check_input(self.a, self.b)
         break
       else:
         print("I do not understand, try again: ")
@@ -73,15 +80,15 @@ class AngryDice():
     self.print_results()
 
 
-  def test_input(self, a, b):
+  def check_input(self, a, b):
     """
-    Test the userInput for each roll to determine the status of game
+    check the userInput for each roll to determine the status of game
     """
     a = self.a.currentValue
     b = self.b.currentValue
-    userInput = self.userInput_list[-1] # test recent userInput
+    userInput = self.userInput_list[-1] # check recent userInput
 
-    # always test for a reset to stage one
+    # always check for a reset to stage one
     if a == "ANGRY" and b == "ANGRY":
       print("\nWOW, you're ANGRY!")
       print("Time to go back to Stage 1!")
@@ -92,10 +99,10 @@ class AngryDice():
       while (a == "6" and "a" not in userInput) or (b == "6" and "b" not in userInput):
         print("You're cheating! You cannot lock a 6! You cannot win until you reroll it!")
         self.print_results()
-    self.test_stage(self.stage)
+    self.check_stage(self.stage)
 
 
-  def test_stage(self, stage):
+  def check_stage(self, stage):
     """
     Determine the current stage of the user
     """
@@ -148,7 +155,6 @@ class AngryDice():
 # if I am the global namespace, then I am in control
 # otherwise, I will defer to whoever called me
 if __name__ == '__main__':
-  launchGame = AngryDice()
-  launchGame.instructions()
-  launchGame.print_results()
+  game = AngryDice()
+  game.play()
 

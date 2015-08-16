@@ -10,7 +10,7 @@ class AngryDice():
   """
 
   def __init__(self):
-    self.level = 1
+    self.stage = 1
     self.userInput_list = []
     self.die_a = Die(["1", "2", "ANGRY", "4", "5", "6"])
     self.die_b = Die(["1", "2", "ANGRY", "4", "5", "6"])
@@ -30,7 +30,7 @@ class AngryDice():
     text += "you want to roll. Their names are a and b.\n"
     print(text)
     input("Press ENTER to start!\n")
-    print("You are in Stage 1)
+    print("You are in Stage 1")
 
 
   def print_results(self):
@@ -45,7 +45,7 @@ class AngryDice():
     """
     Take the user input and allow for the user to stay or roll
     """
-    if self.level == 4:
+    if self.stage == 4:
       exit()
 
     userInput = ""
@@ -81,31 +81,31 @@ class AngryDice():
     b = self.die_b.currentValue
     userInput = self.userInput_list[-1] # test recent userInput
 
-    # always test for a reset to level one
+    # always test for a reset to stage one
     if a == "ANGRY" and b == "ANGRY":
       print("\nWOW, you're ANGRY!")
       print("Time to go back to Stage 1!")
-      self.level = 1
+      self.stage = 1
       return
 
-    if self.level == 3 and (a == "6" or b == "6"):
+    if self.stage == 3 and (a == "6" or b == "6"):
       while (a == "6" and "a" not in userInput) or (b == "6" and "b" not in userInput):
         print("You're cheating! You cannot lock a 6! You cannot win until you reroll it!")
         self.print_results()
-    self.test_stage(self.level)
+    self.test_stage(self.stage)
 
 
-  def test_stage(self, level):
+  def test_stage(self, stage):
     """
     Determine the current stage of the user
     """
     a = self.die_a.currentValue
     b = self.die_b.currentValue
 
-    if self.level == 1:
+    if self.stage == 1:
       self.stage_1(a, b)
 
-    elif self.level == 2:
+    elif self.stage == 2:
       self.stage_2(a, b)
 
     else:
@@ -118,7 +118,7 @@ class AngryDice():
 
     print("\nYou are in Stage 1")
     if (a == "1" and b == "2") or (a == "2" and b == "1"):
-      self.level = 2
+      self.stage = 2
       print("\nYou are in Stage 2")
 
 
@@ -128,7 +128,7 @@ class AngryDice():
 
     print("\nYou are in Stage 2")
     if (a == "ANGRY" and b == "4") or (a == "4" and b == "ANGRY"):
-      self.level = 3
+      self.stage = 3
       print("\nYou are in Stage 3")
 
 
@@ -142,7 +142,7 @@ class AngryDice():
       print("-------------------------------")
       print("-------------------------------")
       print("You've won! Calm down!")
-      self.level = 4
+      self.stage = 4
 
 
 # if I am the global namespace, then I am in control

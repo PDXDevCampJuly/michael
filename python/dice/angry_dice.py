@@ -6,7 +6,7 @@ from dice_class import Die
 
 class AngryDice():
   """
-  The logic and output to play a game of Angy Dice
+  A program that lets a Single Player play Angry Dice.
   """
 
   def __init__(self):

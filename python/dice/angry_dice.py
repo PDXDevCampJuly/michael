@@ -49,7 +49,7 @@ class AngryDice():
 
     userInput = ""
     while "a" not in userInput or "b" not in userInput:
-      userInput = input("\nDecision: ")
+      userInput = input("\nRoll dice: ")
       self.userInput_list.append(userInput)
       print(self.userInput_list)
 

@@ -11,7 +11,7 @@ class AngryDice():
 
   def __init__(self):
     self.stage = 1
-    self.userInput_list = []
+    self.userInput = ""
     self.a = Die(["1", "2", "ANGRY", "4", "5", "6"])
     self.b = Die(["1", "2", "ANGRY", "4", "5", "6"])
 
@@ -37,7 +37,7 @@ class AngryDice():
     self.instructions()
     self.print_results()
 
-    self.get_user_input()
+    # self.get_user_input()
 
 
   def print_results(self):
@@ -45,7 +45,7 @@ class AngryDice():
     print("You rolled:")
     print("a = [  {}  ]".format(self.a))
     print("b = [  {}  ]".format(self.b))
-    # self.user_input()
+    self.get_user_input()
 
 
   def get_user_input(self):
@@ -57,20 +57,20 @@ class AngryDice():
 
     userInput = ""
     while "a" not in userInput or "b" not in userInput:
-      userInput = input("\nRoll dice: ")
-      self.userInput_list.append(userInput)
-      print(self.userInput_list)
+      self.userInput = input("\nRoll dice: ")
+      # self.userInput_list.append(userInput)
+      # print(self.userInput_list)
 
-      if "a" in userInput and "b" in userInput:
+      if "a" in self.userInput and "b" in self.userInput:
         self.a.roll()
         self.b.roll()
         self.check_input(self.a, self.b)
         break
-      elif "a" in userInput:
+      elif "a" in self.userInput:
         self.a.roll()
         self.check_input(self.a, self.b)
         break
-      elif "b" in userInput:
+      elif "b" in self.userInput:
         self.b.roll()
         self.check_input(self.a, self.b)
         break
@@ -86,7 +86,7 @@ class AngryDice():
     """
     a = self.a.currentValue
     b = self.b.currentValue
-    userInput = self.userInput_list[-1] # check recent userInput
+    userInput = self.userInput[-1] # check recent userInput
 
     # always check for a reset to stage one
     if a == "ANGRY" and b == "ANGRY":

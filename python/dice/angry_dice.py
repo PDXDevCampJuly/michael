@@ -4,9 +4,9 @@
 
 from dice_class import Die
 
-class Launch():
+class AngryDice():
   """
-  Launches the game of ANGRY dice
+  The logic and output to play a game of Angy Dice
   """
 
   def __init__(self):
@@ -49,6 +49,7 @@ class Launch():
     while "a" not in userInput or "b" not in userInput:
       userInput = input("\nDecision: ")
       self.userInput_list.append(userInput)
+      print(self.userInput_list)
 
       if "a" in userInput and "b" in userInput:
         self.die_a.roll()
@@ -144,7 +145,7 @@ class Launch():
 # if I am the global namespace, then I am in control
 # otherwise, I will defer to whoever called me
 if __name__ == "__main__":
-  launchGame = Launch()
+  launchGame = AngryDice()
   launchGame.instructions()
   launchGame.print_results()
 

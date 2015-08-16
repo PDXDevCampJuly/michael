@@ -12,8 +12,8 @@ class AngryDice():
   def __init__(self):
     self.stage = 1
     self.userInput_list = []
-    self.die_a = Die(["1", "2", "ANGRY", "4", "5", "6"])
-    self.die_b = Die(["1", "2", "ANGRY", "4", "5", "6"])
+    self.a = Die(["1", "2", "ANGRY", "4", "5", "6"])
+    self.b = Die(["1", "2", "ANGRY", "4", "5", "6"])
 
 
   def instructions(self):
@@ -36,8 +36,8 @@ class AngryDice():
   def print_results(self):
     print("-------------------------------")
     print("You rolled:")
-    print("a = [  {}  ]".format(self.die_a))
-    print("b = [  {}  ]".format(self.die_b))
+    print("a = [  {}  ]".format(self.a))
+    print("b = [  {}  ]".format(self.b))
     self.user_input()
 
 
@@ -55,17 +55,17 @@ class AngryDice():
       print(self.userInput_list)
 
       if "a" in userInput and "b" in userInput:
-        self.die_a.roll()
-        self.die_b.roll()
-        self.test_input(self.die_a, self.die_b)
+        self.a.roll()
+        self.b.roll()
+        self.test_input(self.a, self.b)
         break
       elif "a" in userInput:
-        self.die_a.roll()
-        self.test_input(self.die_a, self.die_b)
+        self.a.roll()
+        self.test_input(self.a, self.b)
         break
       elif "b" in userInput:
-        self.die_b.roll()
-        self.test_input(self.die_a, self.die_b)
+        self.b.roll()
+        self.test_input(self.a, self.b)
         break
       else:
         print("I do not understand, try again: ")
@@ -77,8 +77,8 @@ class AngryDice():
     """
     Test the userInput for each roll to determine the status of game
     """
-    a = self.die_a.currentValue
-    b = self.die_b.currentValue
+    a = self.a.currentValue
+    b = self.b.currentValue
     userInput = self.userInput_list[-1] # test recent userInput
 
     # always test for a reset to stage one
@@ -99,8 +99,8 @@ class AngryDice():
     """
     Determine the current stage of the user
     """
-    a = self.die_a.currentValue
-    b = self.die_b.currentValue
+    a = self.a.currentValue
+    b = self.b.currentValue
 
     if self.stage == 1:
       self.stage_1(a, b)
@@ -113,8 +113,8 @@ class AngryDice():
 
 
   def stage_1(self, a, b):
-    a = self.die_a.currentValue
-    b = self.die_b.currentValue
+    a = self.a.currentValue
+    b = self.b.currentValue
 
     print("\nYou are in Stage 1")
     if (a == "1" and b == "2") or (a == "2" and b == "1"):
@@ -123,8 +123,8 @@ class AngryDice():
 
 
   def stage_2(self, a, b):
-    a = self.die_a.currentValue
-    b = self.die_b.currentValue
+    a = self.a.currentValue
+    b = self.b.currentValue
 
     print("\nYou are in Stage 2")
     if (a == "ANGRY" and b == "4") or (a == "4" and b == "ANGRY"):
@@ -133,8 +133,8 @@ class AngryDice():
 
 
   def stage_3(self, a, b):
-    a = self.die_a.currentValue
-    b = self.die_b.currentValue
+    a = self.a.currentValue
+    b = self.b.currentValue
 
     print("\nYou are in Stage 3")
     if (a == "5" and b == "6") or (a == "6" and b == "5"):
@@ -147,7 +147,7 @@ class AngryDice():
 
 # if I am the global namespace, then I am in control
 # otherwise, I will defer to whoever called me
-if __name__ == "__main__":
+if __name__ == '__main__':
   launchGame = AngryDice()
   launchGame.instructions()
   launchGame.print_results()

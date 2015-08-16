@@ -30,6 +30,7 @@ class AngryDice():
     text += "you want to roll. Their names are a and b.\n"
     print(text)
     input("Press ENTER to start!\n")
+    print("You are in Stage 1)
 
 
   def print_results(self):
@@ -115,29 +116,29 @@ class AngryDice():
     a = self.die_a.currentValue
     b = self.die_b.currentValue
 
-    print("\nStage 1!")
+    print("\nYou are in Stage 1")
     if (a == "1" and b == "2") or (a == "2" and b == "1"):
       self.level = 2
-      print("\nStage 2!")
+      print("\nYou are in Stage 2")
 
 
   def stage_2(self, a, b):
     a = self.die_a.currentValue
     b = self.die_b.currentValue
 
-    print("\nStage 2!")
+    print("\nYou are in Stage 2")
     if (a == "ANGRY" and b == "4") or (a == "4" and b == "ANGRY"):
       self.level = 3
-      print("\nStage 3!")
+      print("\nYou are in Stage 3")
 
 
   def stage_3(self, a, b):
     a = self.die_a.currentValue
     b = self.die_b.currentValue
 
-    print("\nStage 3!")
+    print("\nYou are in Stage 3")
     if (a == "5" and b == "6") or (a == "6" and b == "5"):
-      print("\nStage 3!")
+      print("\nYou are in Stage 3")
       print("-------------------------------")
       print("-------------------------------")
       print("You've won! Calm down!")

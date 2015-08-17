@@ -19,6 +19,7 @@ class AngryDice():
     self.stage = 1
     self.userInput = ""
     self.outcome = ""
+    self.finalCheck = False
 
 
   def instructions(self):
@@ -66,7 +67,7 @@ class AngryDice():
 
 
     # maintains the game flow until user wins depending on userInput
-    while self.stage < 4:
+    while self.finalCheck == False:
       self.outcome = "" # resets the outcome statement
       self.userInput = input("Roll dice: ") + "\n"
       self.check_userInput(self.die_a, self.die_b)
@@ -83,7 +84,7 @@ class AngryDice():
 
     a = self.die_a.currentValue
     b = self.die_b.currentValue
-    # userInput = self.userInput[-1] # check recent userInput
+    invalid_userInput = True # invalid input by the user
 
     # is the user cheating by holding a "6" on Level 3
     if self.stage == 3 and (a == "6" or b == "6"):
@@ -93,19 +94,16 @@ class AngryDice():
           "You cannot win until you reroll it!\n")
         return
 
-    rolled = False
     if "a" in self.userInput:
       self.die_a.roll()
-      rolled = True
-      print("aaaaaa")
+      invalid_userInput = False
 
     if "b" in self.userInput:
       self.die_b.roll()
-      rolled = True
-      print("bbbbbb")
+      invalid_userInput = False
 
-    if not rolled:
-      print("??????")
+    # if a or b not rolled because of incorrect input by the user
+    if invalid_userInput:
       self.outcome = "\nI do not understand, try again...\n"
 
 
@@ -144,7 +142,7 @@ class AngryDice():
 
     if (a == "1" and b == "2") or (a == "2" and b == "1"):
       self.stage = 2
-      self.outcome = "\nStage 1 completed!\n"
+      self.outcome = "\n>>> Stage 1 completed!\n"
 
 
   def stage_2(self, a, b):
@@ -157,7 +155,7 @@ class AngryDice():
 
     if (a == "ANGRY" and b == "4") or (a == "4" and b == "ANGRY"):
       self.stage = 3
-      self.outcome = "\nStage 2 completed!\n"
+      self.outcome = "\n>>> Stage 2 completed!\n"
 
 
   def stage_3(self, a, b):
@@ -173,8 +171,7 @@ class AngryDice():
       ("\n-------------------------------"
       "\n-------------------------------"
       "\nYou've won! Calm down!\n")
-
-      self.stage = 4 # exits the game
+      self.finalCheck = True
 
 
 # if I am the global namespace, then I am in control

@@ -14,10 +14,11 @@ class AngryDice():
     Intializes the AngyDice class
     """
 
-    self.stage = 1
-    self.userInput = ""
     self.a = Die(["1", "2", "ANGRY", "4", "5", "6"])
     self.b = Die(["1", "2", "ANGRY", "4", "5", "6"])
+    self.stage = 1
+    self.userInput = ""
+    self.action = ""
 
 
   def instructions(self):
@@ -40,56 +41,6 @@ class AngryDice():
     input("Press ENTER to start!\n")
 
 
-  def play(self):
-    """
-    Driving function for the entire game
-    """
-
-    # ! need to extract get_user_input() call under print_results()
-    # ! need to pull driving type function out of get_user_input()
-
-    self.instructions()
-    self.print_results()
-
-    # self.get_user_input()
-
-    # while True:
-      # if "a" in self.userInput:
-      #   self.a.roll()
-
-    """
-    Take the user input and allow for the user to stay or roll
-    """
-
-    # stage 4 exits the game
-    if self.stage == 4:
-      exit()
-
-    # maintains the game flow until user wins depending on userInput
-    while True:
-      self.userInput = input("\nRoll dice: ")
-
-
-      if "a" in self.userInput and "b" in self.userInput:
-        self.a.roll()
-        self.b.roll()
-        self.check_input(self.a, self.b)
-        self.print_results()
-
-      elif "a" in self.userInput:
-        self.a.roll()
-        self.check_input(self.a, self.b)
-        self.print_results()
-
-      elif "b" in self.userInput:
-        self.b.roll()
-        self.check_input(self.a, self.b)
-        self.print_results()
-
-      else:
-        print("I do not understand, try again: ")
-
-
   def print_results(self):
     """
     Outputs status of the game
@@ -101,12 +52,32 @@ class AngryDice():
     print("a = [  {}  ]".format(self.a))
     print("b = [  {}  ]".format(self.b))
     # print("\n {}".format(next_action))
-    # self.get_user_input() #
-
-  # def next_action(self):
 
 
-  def check_input(self, a, b):
+  def play(self):
+    """
+    Driving function for the entire game
+    """
+
+    # ! need to extract get_user_input() call under print_results()
+    # ! need to pull driving type function out of get_user_input()
+
+    self.instructions()
+    self.print_results()
+
+
+    # maintains the game flow until user wins depending on userInput
+    while True:
+      # stage 4 exits the game
+      if self.stage == 4:
+        exit()
+
+      self.userInput = input("\nRoll dice: ")
+      self.check_userInput(self.a, self.b)
+      self.check_stage()
+
+
+  def check_userInput(self, a, b):
     """
     Check the userInput for each roll to determine the status of game.
     Determines if the user rolls 2 Angrys.
@@ -115,21 +86,40 @@ class AngryDice():
 
     a = self.a.currentValue
     b = self.b.currentValue
-    userInput = self.userInput[-1] # check recent userInput
+    # userInput = self.userInput[-1] # check recent userInput
 
-    # always check for a reset to stage one
+    # check for 2 Angrys, which resets to stage one
     if a == "ANGRY" and b == "ANGRY":
-      print("\nWOW, you're ANGRY!")
-      print("Time to go back to Stage 1!\n")
+      self.action =
+        """
+        WOW, you're ANGRY!\n")
+        Time to go back to Stage 1!"
+        """
       self.stage = 1
       return
 
     # is the user cheating by holding a "6" on Level 3
     if self.stage == 3 and (a == "6" or b == "6"):
       while (a == "6" and "a" not in userInput) or (b == "6" and "b" not in userInput):
-        print("You're cheating! You cannot lock a 6! You cannot win until you reroll it!")
-        self.print_results()
-    self.check_stage(self.stage)
+        self.action =
+          """
+          You're cheating! You cannot lock a 6!\n
+          You cannot win until you reroll it!
+          """
+      return
+
+    if "a" in self.userInput and "b" in self.userInput:
+      self.a.roll()
+      self.b.roll()
+
+    elif "a" in self.userInput:
+      self.a.roll()
+
+    elif "b" in self.userInput:
+      self.b.roll()
+
+    else:
+      print("I do not understand, try again: ")
 
 
   def check_stage(self, stage):

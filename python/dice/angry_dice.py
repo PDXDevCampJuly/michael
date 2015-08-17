@@ -5,27 +5,21 @@
 from dice_class import Die
 
 class AngryDice():
-  """
-  A program that lets a Single Player play Angry Dice
-  """
+  """ A program that lets a Single Player play Angry Dice """
 
   def __init__(self):
-    """
-    Intializes the AngyDice class
-    """
+    """ Intializes the AngyDice class """
 
     self.die_a = Die(["1", "2", "ANGRY", "4", "5", "6"])
     self.die_b = Die(["1", "2", "ANGRY", "4", "5", "6"])
     self.stage = 1
     self.userInput = ""
     self.outcome = ""
-    self.finalCheck = False
+    self.finalCheck = False # breaks the main method upon a win
 
 
   def instructions(self):
-    """
-    Output instructions for the user
-    """
+    """ Output instructions for the user """
 
     text = "\nWelcome to Angry Dice! Roll the two dice until you get thru the 3 Stages!\n"
     text += "Stage 1 you need to roll 1 & 2\n"
@@ -42,9 +36,7 @@ class AngryDice():
 
 
   def print_results(self):
-    """
-    Output status of the game
-    """
+    """ Output status of the game """
 
     print("\nYou are in Stage {}".format(self.stage))
     print("-------------------------------")
@@ -55,16 +47,10 @@ class AngryDice():
 
 
   def main(self):
-    """
-    Driving function for the entire game
-    """
-
-    # ! need to extract get_user_input() call under print_results()
-    # ! need to pull driving type function out of get_user_input()
+    """ Driving function for the entire game """
 
     self.instructions()
     self.print_results()
-
 
     # maintains the game flow until user wins depending on userInput
     while self.finalCheck == False:
@@ -76,11 +62,7 @@ class AngryDice():
 
 
   def check_userInput(self, a, b):
-    """
-    Check the userInput for each roll to determine the status of game.
-    Determines if the user rolls 2 Angrys.
-    Determines if the user is cheating.
-    """
+    """ Check the userInput and if the user is cheating. """
 
     a = self.die_a.currentValue
     b = self.die_b.currentValue
@@ -94,10 +76,12 @@ class AngryDice():
           "You cannot win until you reroll it!\n")
         return
 
+    # if a is input by the user
     if "a" in self.userInput:
       self.die_a.roll()
       invalid_userInput = False
 
+    # if b is input by the user
     if "b" in self.userInput:
       self.die_b.roll()
       invalid_userInput = False
@@ -108,9 +92,7 @@ class AngryDice():
 
 
   def check_stage(self):
-    """
-    Determine the current stage of the user
-    """
+    """ Determine the current stage of the user """
 
     a = self.die_a.currentValue
     b = self.die_b.currentValue
@@ -122,20 +104,21 @@ class AngryDice():
         ("\nWOW, you're ANGRY!\n"
         "Time to go back to Stage 1!\n")
 
+    # if stage 1, call the stage_1 helper function
     if self.stage == 1:
       self.stage_1(a, b)
 
+    # if stage 2, call the stage_2 helper function
     elif self.stage == 2:
       self.stage_2(a, b)
 
+    # if stage 3, call the stage_3 helper function
     else:
       self.stage_3(a, b)
 
 
   def stage_1(self, a, b):
-    """
-    Logic for Stage 1 after call from check_stage()
-    """
+    """ Helper for check_stage: Logic for Stage 1 """
 
     a = self.die_a.currentValue
     b = self.die_b.currentValue
@@ -146,9 +129,7 @@ class AngryDice():
 
 
   def stage_2(self, a, b):
-    """
-    Logic for Stage 2 after call from check_stage()
-    """
+    """ Helper for check_stage: Logic for Stage 2 """
 
     a = self.die_a.currentValue
     b = self.die_b.currentValue
@@ -159,9 +140,7 @@ class AngryDice():
 
 
   def stage_3(self, a, b):
-    """
-    Logic for Stage 3 after call from check_stage()
-    """
+    """ Helper for check_stage: Logic for Stage 3 """
 
     a = self.die_a.currentValue
     b = self.die_b.currentValue

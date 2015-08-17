@@ -4,6 +4,7 @@
 
 from dice_class import Die
 
+
 class AngryDice():
   """ A program that lets a Single Player play Angry Dice """
 

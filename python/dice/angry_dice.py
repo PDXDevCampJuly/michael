@@ -163,8 +163,6 @@ class AngryDice():
       self.finalCheck = True
 
 
-# if I am the global namespace, then I am in control
-# otherwise, I will defer to whoever called me
 if __name__ == '__main__':
   game = AngryDice()
   game.main()

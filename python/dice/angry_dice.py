@@ -4,6 +4,7 @@
 
 from dice_class import Die
 
+
 class AngryDice():
   """ A program that lets a Single Player play Angry Dice """
 
@@ -56,39 +57,48 @@ class AngryDice():
     while self.finalCheck == False:
       self.outcome = "" # resets the outcome statement
       self.userInput = input("Roll dice: ") + "\n"
-      self.check_userInput(self.die_a, self.die_b)
+      self.check_userInput()
       self.check_stage()
       self.print_results()
 
 
-  def check_userInput(self, a, b):
+  def check_userInput(self):
     """ Check the userInput and if the user is cheating. """
 
     a = self.die_a.currentValue
     b = self.die_b.currentValue
     invalid_userInput = True # invalid input by the user
 
-    # is the user cheating by holding a "6" on Level 3
-    if self.stage == 3 and (a == "6" or b == "6"):
-      if (a == "6" and "a" not in self.userInput) or (b == "6" and "b" not in self.userInput):
-        self.outcome = \
-          ("\nYou're cheating! You cannot lock a 6!\n"
-          "You cannot win until you reroll it!\n")
-        return
+    # check if the user is cheating
+    # call the is_cheating helper function
+    is_cheating = self.cheating_status(a, b)
 
     # if a is input by the user
-    if "a" in self.userInput:
+    if "a" in self.userInput and is_cheating == False:
       self.die_a.roll()
       invalid_userInput = False
 
     # if b is input by the user
-    if "b" in self.userInput:
+    if "b" in self.userInput and is_cheating == False:
       self.die_b.roll()
       invalid_userInput = False
 
     # if a or b not rolled because of incorrect input by the user
-    if invalid_userInput:
+    if invalid_userInput and is_cheating == False:
       self.outcome = "\nI do not understand, try again...\n"
+
+
+  def cheating_status(self, a, b):
+    """ Helper function check_userInput, cheating if level 3 currentValue 6 """
+
+    if self.stage == 3 and (a == "6" or b == "6"):
+      if (a == "6" and "a" not in self.userInput) or \
+            (b == "6" and "b" not in self.userInput):
+        self.outcome = \
+          ("\nYou're cheating! You cannot lock a 6!\n"
+          "You cannot win until you re-roll it!\n")
+        return True
+    return False
 
 
   def check_stage(self):

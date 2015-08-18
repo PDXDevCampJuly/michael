@@ -65,7 +65,7 @@ class AngryDice():
 
         a = self.die_a.currentValue
         b = self.die_b.currentValue
-        invalid_userInput = True  # invalid input by the user
+        valid_userInput = False  # valid input by the user
 
         # check if the user is cheating
         # call the is_cheating helper function
@@ -74,22 +74,19 @@ class AngryDice():
         # if a is input by the user
         if "a" in self.userInput and is_cheating is False:
             self.die_a.roll()
-            invalid_userInput = False
+            valid_userInput = True
 
         # if b is input by the user
         if "b" in self.userInput and is_cheating is False:
             self.die_b.roll()
-            invalid_userInput = False
+            valid_userInput = True
 
         # if a or b not rolled because of incorrect input by the user
-        if invalid_userInput and is_cheating is False:
+        if not valid_userInput and is_cheating is False:
             self.outcome = "\nI do not understand, try again...\n"
 
     def cheating_status(self, a, b):
-        """
-        Helper function check_userInput
-        Cheating if level 3 currentValue 6
-        """
+        """ Helper for check_userInput: cheating if level 3 currentValue 6 """
 
         if self.stage == 3 and (a == "6" or b == "6"):
             if (a == "6" and "a" not in self.userInput) or \

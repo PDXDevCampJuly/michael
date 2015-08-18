@@ -49,12 +49,13 @@ class AngryDice():
         """ Driving function for the entire game """
 
         self.instructions()
+        self.check_stage() # in the case the game starts with roll [1, 2]
         self.print_results()
 
         # maintains the game flow until user wins depending on userInput
         while not self.finalCheck:
             self.outcome = ""  # resets the outcome statement
-            self.userInput = input("Roll dice: ") + "\n"
+            self.userInput = input("Roll dice: ").lower() + "\n"
             self.check_user_input()
             self.check_stage()
             self.print_results()
@@ -149,8 +150,6 @@ class AngryDice():
             self.finalCheck = True
 
 
-# if I am the global namespace, then I am in control
-# otherwise, I will defer to whoever called me
 if __name__ == '__main__':
     game = AngryDice()
     game.main()

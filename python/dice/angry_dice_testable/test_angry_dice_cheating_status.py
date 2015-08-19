@@ -2,8 +2,6 @@ __author__ = 'mw'
 
 import unittest
 from angry_dice import AngryDice
-from unittest.mock import patch
-from io import StringIO
 
 
 class test_cheating_status(unittest.TestCase):

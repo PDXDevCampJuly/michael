@@ -4,7 +4,7 @@ import unittest
 from angry_dice import AngryDice
 
 
-class test_cheating_status(unittest.TestCase):
+class TestAngryDiceCheatingStatus(unittest.TestCase):
 
     def setUp(self):
         """ Initializes the die for the following testing functions """

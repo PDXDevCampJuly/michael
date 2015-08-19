@@ -56,9 +56,9 @@ class AngryDice():
         while not self.finalCheck:
             self.outcome = ""  # resets the outcome statement
             self.userInput = input("Roll dice: ").lower() + "\n"
-            self.check_user_input()
-            self.check_stage()
-            self.print_results()
+            self.check_user_input() # check user input incl. cheating
+            self.check_stage() # check the stage to direct game
+            self.print_results() # display the status of the game
 
     def check_user_input(self):
         """ Check the userInput and if the user is cheating. """
@@ -126,6 +126,7 @@ class AngryDice():
         """ Helper for check_stage: Logic for Stage 1 """
 
         if (a == "1" and b == "2") or (a == "2" and b == "1"):
+            # advance the palyer to stage 2
             self.stage = 2
             self.outcome = "\n>>> Stage 1 completed!\n"
 
@@ -133,6 +134,7 @@ class AngryDice():
         """ Helper for check_stage: Logic for Stage 2 """
 
         if (a == "ANGRY" and b == "4") or (a == "4" and b == "ANGRY"):
+            # advance the player to stage 3
             self.stage = 3
             self.outcome = "\n>>> Stage 2 completed!\n"
 
@@ -140,6 +142,7 @@ class AngryDice():
         """ Helper for check_stage: Logic for Stage 3 """
 
         if (a == "5" and b == "6") or (a == "6" and b == "5"):
+            # congratulate the user for a victory
             self.outcome = \
                 ("\n-------------------------------"
                  "\n-------------------------------"

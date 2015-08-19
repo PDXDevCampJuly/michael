@@ -3,22 +3,23 @@
 # >>>-------------------------------------------------------->
 __author__ = 'mw'
 
-from monster_class import Monster
-
 
 class Monster():
     """ Create a monster based off UML using TDD. """
 
     def __init__(self, name):
         """ Initializes the Monster class. """
-        self.name = ""  # set on init
+        self.name = name  # set on init
         self.status = "Out of Tokyo"
         self.health = 10
         self.victory_points = 0  # >= 20 points is "WINNING"
 
     def reset(self):
         """ Reset Monster to initial stats. """
-        pass
+        self.status = "Out of Tokyo"
+        self.health = 10
+        self.victory_points = 0
+
 
     def in_tokyo(self):
         """ Returns True if Monster status "in Tokyo". """

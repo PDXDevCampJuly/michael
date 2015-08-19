@@ -34,7 +34,8 @@ class Monster():
         If 'y', return True
         If 'n', return False
         """
-        pass
+        userInput = input("Flee to Tokyo, enter 'y' or 'n': ")
+
 
     def heal(self):
         """

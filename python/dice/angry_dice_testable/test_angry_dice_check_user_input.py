@@ -12,6 +12,7 @@ class test_check_user_input(unittest.TestCase):
         self.game = AngryDice()
         # print(self.shortDescription())
 
+
     def tearDown(self):
         """ delete the instance of game after running tests """
         del self.game

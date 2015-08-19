@@ -38,12 +38,12 @@ class AngryDice():
     def print_results(self):
         """ Output status of the game """
 
-        print("\nYou are in Stage {}".format(self.stage))
-        print("-------------------------------")
-        print("You rolled:")
-        print("a = [  {}  ]".format(self.die_a))
-        print("b = [  {}  ]".format(self.die_b))
-        print("{}".format(self.outcome))
+        print("\nYou are in Stage {}\n"
+              "-------------------------------\n"
+              "You rolled:\n"
+              "a = [  {}  ]\n"
+              "b = [  {}  ]\n"
+              "{}".format(self.stage, self.die_a, self.die_b, self.outcome))
 
     def main(self):
         """ Driving function for the entire game """

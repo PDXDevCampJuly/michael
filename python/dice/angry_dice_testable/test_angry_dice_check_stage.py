@@ -18,23 +18,32 @@ class test_check_stage(unittest.TestCase):
         """ delete the instance of game after running tests """
         del self.game
 
-
-    def test_check_user_input_holdDieA_rollB(self):
-        """ [6, 4], user holds A6 and rolls B4 """
-        self.game.userInput = "b"
-
-        self.game.die_b.currentValue=8
+    def test_check_user_input_change_currentValue_a9(self):
+        """ [9, x], does currentValue a9 change after roll a """
+        self.game.die_a.currentValue = 9
+        self.game.userInput = "a"
         self.game.check_user_input()
+        self.assertNotEqual(9, self.game.die_a.currentValue,
+                            "[9, x], die_a currentValue not 9")
 
-        self.assertNotEqual(8, self.game.die_b.currentValue)
+    def test_check_user_input_change_currentValue_b9(self):
+        """ [x, 9], does currentValue b9 change after roll b """
 
+        self.game.die_b.currentValue = 9
+        self.game.userInput = "b"
+        self.game.check_user_input()
+        self.assertNotEqual(9, self.game.die_b.currentValue,
+                            "[9, x], die_b currentValue not 9")
 
-    # def test_cheating_status_holdDieB_rollA(self):
-    #     """ [4, 6], user holds A4 and rolls B6 """
-    #     self.game.stage = 3
-    #     self.game.userInput = "A"
-    #     self.assertFalse(self.game.cheating_status("4", "6"),
-    #                      "[4, 6], stage 3, hold b, roll A")
+    def test_check_user_input_change_currentValue_a9_b9(self):
+        """ [9, 9], does currentValue a9, b9 change after roll ab """
+        self.game.die_a.currentValue = 9
+        self.game.die_b.currentValue = 9
+        self.game.userInput = "ab"
+        self.game.check_user_input()
+        self.assertNotEqual(9, self.game.die_b.currentValue,
+                            "[9, 9], die_a, die_b currentValue(s) not 9")
+
 
 
 

@@ -23,7 +23,10 @@ class Monster():
 
     def in_tokyo(self):
         """ Returns True if Monster status "in Tokyo". """
-        pass
+        if self.status == "in Tokyo":
+            return True
+        else:
+            return False
 
     def flee(self):
         """

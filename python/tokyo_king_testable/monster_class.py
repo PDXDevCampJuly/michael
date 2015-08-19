@@ -34,8 +34,13 @@ class Monster():
         If 'y', return True
         If 'n', return False
         """
-        userInput = input("Flee to Tokyo, enter 'y' or 'n': ")
-
+        # userInput = input("Flee to Tokyo, enter 'y' or 'n': ").lower()
+        # if "y" in userInput:
+        #     return True
+        # elif "n" in userInput:
+        #     return False
+        # else:
+        #     print("I do not understand")
 
     def heal(self):
         """

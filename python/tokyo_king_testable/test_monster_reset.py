@@ -15,17 +15,20 @@ class TestMonsterReset(unittest.TestCase):
         del self.monster
 
     def test_reset_status_to_out_of_tokyo(self):
+        """ reset status to initial value "Out of Tokyo" """
         self.monster.status = "In Tokyo"
         self.monster.reset()
         self.assertEqual("Out of Tokyo", self.monster.status,
                          "reset status to 'Out of Tokyo'")
 
     def test_reset_health_to_10(self):
+        """ reset health to initial value 10 """
         self.monster.health = 20
         self.monster.reset()
         self.assertEqual(10, self.monster.health, "reset health to 10")
 
     def test_reset_victory_points_to_0(self):
+        """ reset victory_points to initial value zero """
         self.monster.victory_points = 20
         self.monster.reset()
         self.assertEqual(0, self.monster.victory_points,

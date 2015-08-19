@@ -19,8 +19,8 @@ class TestAngryDicePrintResults(unittest.TestCase):
         del self.game
 
     @patch('sys.stdout', new_callable=StringIO)
-    def test_stage_output(self, mock_stdout):
-        """ does the stage print """
+    def test_print_results(self, mock_stdout):
+        """ initialize and test the output """
         self.game.stage = 1
         self.game.die_a = "2"
         self.game.die_b = "3"
@@ -30,9 +30,10 @@ class TestAngryDicePrintResults(unittest.TestCase):
                  "You rolled:\n" \
                  "a = [  {}  ]\n" \
                  "b = [  {}  ]\n" \
-                 "{}".format("1", "2", "3", "This is a Test\n")
+                 "{}".format(1, "2", "3", "This is a Test\n")
         self.game.print_results()
-        self.assertMultiLineEqual(mock_stdout.getvalue(), output)
+        self.assertMultiLineEqual(mock_stdout.getvalue(), output,
+                                  "output matches the print_results format")
 
 
 if __name__ == '__main__':

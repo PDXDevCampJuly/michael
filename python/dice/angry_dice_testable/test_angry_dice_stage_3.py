@@ -8,7 +8,6 @@ class TestAngryDiceStage3(unittest.TestCase):
 
     def setUp(self):
         """ Initializes the die for the following testing functions """
-
         self.game = AngryDice()
         # print(self.shortDescription())
 

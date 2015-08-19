@@ -8,10 +8,8 @@ class TestAngryDiceCheckUserInput(unittest.TestCase):
 
     def setUp(self):
         """ Initializes the die for the following testing functions """
-
         self.game = AngryDice()
         # print(self.shortDescription())
-
 
     def tearDown(self):
         """ delete the instance of game after running tests """

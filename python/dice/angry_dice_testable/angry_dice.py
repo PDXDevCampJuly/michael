@@ -126,7 +126,7 @@ class AngryDice():
         """ Helper for check_stage: Logic for Stage 1 """
 
         if (a == "1" and b == "2") or (a == "2" and b == "1"):
-            # advance the palyer to stage 2
+            # advance the player to stage 2
             self.stage = 2
             self.outcome = "\n>>> Stage 1 completed!\n"
 
@@ -143,10 +143,9 @@ class AngryDice():
 
         if (a == "5" and b == "6") or (a == "6" and b == "5"):
             # congratulate the user for a victory
-            self.outcome = \
-                ("\n-------------------------------"
-                 "\n-------------------------------"
-                 "\nYou've won! Calm down!\n")
+            self.outcome = "\n-------------------------------" \
+                           "\n-------------------------------" \
+                           "\nYou've won! Calm down!\n"
             self.finalCheck = True
 
 

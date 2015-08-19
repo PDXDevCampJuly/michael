@@ -54,7 +54,7 @@ class test_stage_n(unittest.TestCase):
 
     def test_stage_2_aAngry_b1(self):
         """ [1, 2] stage stays 1 """
-        self.stage = 2
+        self.game.stage = 2
         self.game.stage_2("ANGRY", "1")
         self.assertNotEqual(3, self.game.stage, "[Angry, 1], stays at stage 2")
 

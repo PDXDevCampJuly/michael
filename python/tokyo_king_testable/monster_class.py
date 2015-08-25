@@ -20,7 +20,6 @@ class Monster():
         self.health = 10
         self.victory_points = 0
 
-
     def in_tokyo(self):
         """ Returns True if Monster status "in Tokyo". """
         return True if self.status == "in Tokyo" else False
@@ -31,10 +30,10 @@ class Monster():
         If 'y', return True
         If 'n', return False
         """
-        # userInput = input("Flee to Tokyo, enter 'y' or 'n': ").lower()
-        # if "y" in userInput:
+        # self.userInput = input("Flee to Tokyo, enter 'y' or 'n': ").lower()
+        # if "y" in self.userInput:
         #     return True
-        # elif "n" in userInput:
+        # elif "n" in self.userInput:
         #     return False
         # else:
         #     print("I do not understand")

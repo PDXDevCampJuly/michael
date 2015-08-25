@@ -12,6 +12,7 @@
         <table>
             <thead>
                 <tr>
+                    <th></th>
                     <th>Material</th>
                     <th>Price</th>
                     <th>In Stock</th>
@@ -19,17 +20,76 @@
             </thead>
             <tbody id="inventory">
                 <tr>
+                    <td><input type="checkbox"></td>
                     <td>Wood</td>
                     <td>$15</td>
-                    <td class="true">Yes</td>
+                    <td class="true" id="woodStock">Yes</td>
                 </tr>
             </tbody>
+            <tfoot>
+                <td></td>
+                <td>
+                    <input type="text" name="material" id="material"/>
+                </td>
+                <td>
+                    <input type="text" name="price" id="price"/>
+                </td>
+                <td>
+                    <button onclick="addNewStock()">Add New</button>
+                </td>
+            </tfoot>
         </table>
 
-        <button>Add Stock</button>
-        <button>Remove Stock</button>
+        <button onclick="addStock()">Add Stock</button>
+        <button onclick="removeStock()">Remove Stock</button>
 
     </main>
+
+    <script type="text/javascript">
+
+        var inventory = document.getElementById('inventory');
+        var woodStock, material, price;
+
+        function removeStock() {
+            // var woodStock = document.getElementById('woodStock');
+
+            for (var i=0; i<6; i++) {
+
+            }
+
+            woodStock.className = 'false';
+            woodStock.innerHTML = 'No';
+        }
+
+        function addStock() {
+            // var woodStock = document.getElementById('woodStock');
+            woodStock.className = 'true';
+            woodStock.innerHTML = 'Yes';
+        }
+
+        function addNewStock() {
+            material = document.getElementById('material').value;
+            price = document.getElementById('price').value;
+
+            if (material === "" || price === "" || isNaN(price)) {
+                alert("invalid input")
+                return
+            }
+            var newRow = "<tr>";
+                newRow += "<td><input type='checkbox'></td>";
+                newRow += "<td>" + material + "</td>";
+                newRow += "<td>" + price + "</td>";
+                newRow += "<td class='false'>No</td>";
+                newRow += "</tr>";
+
+                inventory.innerHTML += newRow;
+
+            document.getElementById('material').value = '';
+            document.getElementById('price').value = '';
+        };
+
+
+    </script>
 
 </body>
 </html>

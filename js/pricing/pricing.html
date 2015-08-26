@@ -12,7 +12,7 @@
         <table>
             <thead>
                 <tr>
-                    <th></th>
+                    <th><input type="checkbox" onclick="checkAll(this)"></th>
                     <th>Material</th>
                     <th>Price</th>
                     <th>In Stock</th>
@@ -40,56 +40,11 @@
             </tfoot>
         </table>
 
-        <button onclick="addStock()">Add Stock</button>
-        <button onclick="removeStock()">Remove Stock</button>
+        <button onclick="addStock()">In Stock</button>
+        <button onclick="removeStock()">Out of Stock</button>
 
     </main>
 
-    <script type="text/javascript">
-
-        var inventory = document.getElementById('inventory');
-        var woodStock, material, price;
-
-        function removeStock() {
-            // var woodStock = document.getElementById('woodStock');
-
-            for (var i=0; i<6; i++) {
-
-            }
-
-            woodStock.className = 'false';
-            woodStock.innerHTML = 'No';
-        }
-
-        function addStock() {
-            // var woodStock = document.getElementById('woodStock');
-            woodStock.className = 'true';
-            woodStock.innerHTML = 'Yes';
-        }
-
-        function addNewStock() {
-            material = document.getElementById('material').value;
-            price = document.getElementById('price').value;
-
-            if (material === "" || price === "" || isNaN(price)) {
-                alert("invalid input")
-                return
-            }
-            var newRow = "<tr>";
-                newRow += "<td><input type='checkbox'></td>";
-                newRow += "<td>" + material + "</td>";
-                newRow += "<td>" + price + "</td>";
-                newRow += "<td class='false'>No</td>";
-                newRow += "</tr>";
-
-                inventory.innerHTML += newRow;
-
-            document.getElementById('material').value = '';
-            document.getElementById('price').value = '';
-        };
-
-
-    </script>
-
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

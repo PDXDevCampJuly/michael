@@ -2,37 +2,91 @@ var inventory = document.getElementById('inventory');
 // var woodStock = document.getElementById('woodStock');
 var woodStock, material, price;
 
-function checkAll(checkbox) {
-    var inputs = inventory.getElementsByTagName('input');
-    for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].type == 'checkbox') {
-            inputs[i].checked = checkbox.checked
-        }
-    }
-}
-
 function Product(name, stock, price) {
     this.checked = false;
     this.name = name;
     this.stock = stock;
     this.price = price;
-
     this.adjustStock = function(num) {
         this.stock -= num;
-    }
+    };
     this.inStock = function() {
         return this.stock > 0;
+    };
+}
+
+var materials = [new Product('Wood', 10, 15)];
+populateInventoryDOM();
+// populateInventory();
+
+// Direct DOM manipulation >>> safer approach
+function populateInventoryDOM() {
+
+    for (var i=0; i<materials.length; i++) {
+        var newProdRow = document.createElement('tr'); //makes a tr
+
+        var checkboxCell = document.createElement('td');
+        var checkbox = document.createElement('input');
+        checkbox.type = "checkbox"; //sets the attribute
+        checkbox.checked = materials[i].checked;
+        checkboxCell.appendChild(checkbox);
+        newProdRow.appendChild(checkboxCell);
+
+        //name column
+        var nameCol = document.createElement('td');
+        var nameText = document.createTextNode(materials[i].name);
+        nameCol.appendChild(nameText); //better practice to add text
+        newProdRow.appendChild(nameCol);
+
+        //price column
+        var priceCol = document.createElement('td');
+        var priceText = document.createTextNode('$' + materials[i].price);
+        priceCol.appendChild(priceText);
+        newProdRow.appendChild(priceCol);
+
+        //stock column
+        var stockCol = document.createElement('td');
+        stockCol.className = materials[i].inStock();
+        var stockText = document.createTextNode(materials[i].stock);
+        stockCol.appendChild(stockText);
+        newProdRow.appendChild(stockCol);
+
+        inventory.appendChild(newProdRow);
+    }
+
+}
+
+// function populateInventory() {
+//     // loop through materials
+//     // Add a row for each item in materials
+//     // Make sure that stock class reflects inStock
+//     // Make sure that checkbox status reflects checked
+//     for (var i = 0; i < materials.length; i++) {
+//         var newRow = "<tr>";
+//         newRow += "<td><input type='checkbox' /></td>";
+//         newRow += "<td>" + materials[i].name + "</td>";
+//         newRow += "<td>$" + materials[i].price + "</td>";
+//         newRow += "<td class=' " + materials[i].inStock() + " '>" + materials[i].stock + "</td>";
+//         newRow += "</tr>";
+//         inventory.innerHTML += newRow;
+//     }
+// }
+
+function checkAll(checkbox) {
+    var inputs = inventory.getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].type == 'checkbox') {
+            inputs[i].checked = checkbox.checked;
+        }
     }
 }
-var materials = [new Product('wood', 10, 15)];
 
 function removeStock() {
     // var woodStock = document.getElementById('woodStock');
     rows = inventory.getElementsByTagName('tr');
 
     for (var i = 0; i < rows.length; i++) {
-        var inputs = rows[i].getElementsByTagName('input'); //this will get a list and we know this by the plural Elements
-        // console.log(inputs[0]);
+        var inputs = rows[i].getElementsByTagName('input');
         if (inputs[0].type == 'checkbox') {
             if (inputs[0].checked) {
                 //Flip the status of the stock column
@@ -64,13 +118,14 @@ function addStock() {
     }
 }
 
+// ! need to add to materials list
 function addNewStock() {
     material = document.getElementById('material').value;
     price = document.getElementById('price').value;
 
     if (material === "" || price === "" || isNaN(price)) {
-        alert("invalid input")
-        return
+        alert("invalid input");
+        return;
     }
     var newRow = "<tr>";
         newRow += "<td><input type='checkbox'></td>";
@@ -84,4 +139,28 @@ function addNewStock() {
     // you have to grab it again because assigning it above only has a reference to the html object
     document.getElementById('material').value = '';
     document.getElementById('price').value = '';
+    // materials.push(new Product(material, 10, price));
 }
+
+// function mock_addNewStock() {
+//     material = document.getElementById('material').value;
+//     price = document.getElementById('price').value;
+
+//     if (material === "" || price === "" || isNaN(price)) {
+//         alert("invalid input");
+//         return;
+//     }
+//     for (var i = 0; i < 5; i++) {
+//         var newRow = "<tr>";
+//         newRow += "<td><input type='checkbox'></td>";
+//         newRow += "<td>" + material + "</td>";
+//         newRow += "<td>$" + price + "</td>";
+//         newRow += "<td class='false'>No</td>";
+//         newRow += "</tr>";
+//         inventory.innerHTML += newRow;
+//     }
+
+//     // you have to grab it again because assigning it above only has a reference to the html object
+//     document.getElementById('material').value = '';
+//     document.getElementById('price').value = '';
+// }

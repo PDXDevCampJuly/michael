@@ -3,8 +3,6 @@ __author__ = 'Chelsea'
 import unittest
 from Tokyo_monster_game import Monster
 
-
-
 class Check_in_tokyo(unittest.TestCase):
 
     def setUp(self):
@@ -18,7 +16,7 @@ class Check_in_tokyo(unittest.TestCase):
 
         self.monster_game.in_tokyo()
 
-        self.assertEqual(in_tokyo, False)
+        self.assertFalse(self.monster_game.In_Tokyo, False)
 
 
 if __name__ == '__main__':

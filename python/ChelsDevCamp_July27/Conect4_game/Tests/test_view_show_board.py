@@ -7,7 +7,7 @@ from io import StringIO
 
 
 class TestViewShowBoard(unittest.TestCase):
-    """make sure it prints an empty list"""
+    """ Checks the visual aspect of the game for the user interface """
 
     def setUp(self):
         """Inits empty grid for testing"""
@@ -22,17 +22,18 @@ class TestViewShowBoard(unittest.TestCase):
         """visually represent the grid as a connect 4 game """
         # first_row = "  1   2   3   4   5   6   7"
         currentBoard =\
-            "                    "\
-            "                    "\
-            "                    "\
-            "                    "\
-            "                    "\
-            "                    "\
-            "--------------------"\
-            "1  2  3  4  5  6  7 \n"
+        "\n"\
+        " 1 2 3 4 5 6 7\n"\
+        "| | | | | | | |\n"\
+        "| | | | | | | |\n"\
+        "| | | | | | | |\n"\
+        "| | | | | | | |\n"\
+        "| | | | | | | |\n"\
+        "| | | | | | | |\n"\
+        "---------------\n"\
+        " ^           ^ \n"\
 
         self.theView.show_board([[" "] * 6 for x in range(7)])
-
         self.assertEqual(mock_stdout.getvalue(), currentBoard)
 
     @patch('sys.stdout', new_callable=StringIO)
@@ -42,3 +43,7 @@ class TestViewShowBoard(unittest.TestCase):
     #def test_show_the_board(self):
      #  """ visually represent the grid as a connect 4 game """
      #  self.theView.show_board()
+
+
+if __name__ == '__main__':
+    unittest.main()

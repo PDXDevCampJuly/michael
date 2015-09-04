@@ -2,7 +2,7 @@ var inventory = document.getElementById('inventory');
 // var woodStock = document.getElementById('woodStock');
 var woodStock, material, price;
 
-function Product(name, stock, price) {
+function Product(name, price, stock) {
     this.checked = false;
     this.name = name;
     this.stock = stock;
@@ -15,7 +15,10 @@ function Product(name, stock, price) {
     };
 }
 
-var materials = [new Product('Wood', 10, 15)];
+// this works for code below
+// var materials = [new Product('Wood', 15, 10)];
+
+var materials = [];
 populateInventoryDOM();
 // populateInventory();
 
@@ -53,24 +56,23 @@ function populateInventoryDOM() {
 
         inventory.appendChild(newProdRow);
     }
-
 }
 
-// function populateInventory() {
-//     // loop through materials
-//     // Add a row for each item in materials
-//     // Make sure that stock class reflects inStock
-//     // Make sure that checkbox status reflects checked
-//     for (var i = 0; i < materials.length; i++) {
-//         var newRow = "<tr>";
-//         newRow += "<td><input type='checkbox' /></td>";
-//         newRow += "<td>" + materials[i].name + "</td>";
-//         newRow += "<td>$" + materials[i].price + "</td>";
-//         newRow += "<td class=' " + materials[i].inStock() + " '>" + materials[i].stock + "</td>";
-//         newRow += "</tr>";
-//         inventory.innerHTML += newRow;
-//     }
-// }
+function populateInventory() {
+    // loop through materials
+    // Add a row for each item in materials
+    // Make sure that stock class reflects inStock
+    // Make sure that checkbox status reflects checked
+    for (var i = 0; i < materials.length; i++) {
+        var newRow = "<tr>";
+        newRow += "<td><input type='checkbox' /></td>";
+        newRow += "<td>" + materials[i].name + "</td>";
+        newRow += "<td>$" + materials[i].price + "</td>";
+        newRow += "<td class=' " + materials[i].inStock() + " '>" + materials[i].stock + "</td>";
+        newRow += "</tr>";
+        inventory.innerHTML += newRow;
+    }
+}
 
 function checkAll(checkbox) {
     var inputs = inventory.getElementsByTagName('input');
@@ -90,9 +92,13 @@ function removeStock() {
         if (inputs[0].type == 'checkbox') {
             if (inputs[0].checked) {
                 //Flip the status of the stock column
-                var stock = rows[i].lastElementChild;
-                stock.className = 'false';
-                stock.textContent = 'No';
+                var materialText = rows[i].firstElementChild.nextSibling;
+                materialText.className = 'falseText';
+                var priceText = materialText.nextSibling;
+                priceText.className = 'falseText';
+                var stockText = rows[i].lastElementChild;
+                stockText.className = 'false';
+                // stock.textContent = 'No';
                 // inputs[0].checked = false;
             }
         }
@@ -109,9 +115,14 @@ function addStock() {
         if (inputs[0].type == 'checkbox') {
             if (inputs[0].checked) {
                 //Flip the status of the stock column
-                var stock = rows[i].lastElementChild;
-                stock.className = 'true';
-                stock.textContent = 'Yes';
+                var materialText = rows[i].firstElementChild.nextSibling;
+                materialText.className = 'trueText';
+                var priceText = materialText.nextSibling;
+                priceText.className = 'trueText';
+                var stockText = rows[i].lastElementChild;
+                stockText.className = 'true';
+
+                // stock.textContent = 10;
                 // inputs[0].checked = false;
             }
         }
@@ -131,7 +142,7 @@ function addNewStock() {
         newRow += "<td><input type='checkbox'></td>";
         newRow += "<td>" + material + "</td>";
         newRow += "<td>$" + price + "</td>";
-        newRow += "<td class='false'>No</td>";
+        newRow += "<td class='true'>10</td>";
         newRow += "</tr>";
 
         inventory.innerHTML += newRow;
@@ -164,3 +175,39 @@ function addNewStock() {
 //     document.getElementById('material').value = '';
 //     document.getElementById('price').value = '';
 // }
+
+
+// Create XMLHttpRequest object
+var newRequest = new XMLHttpRequest();
+// console.log(newRequest);
+newRequest.onload = function() {
+    if (newRequest.status === 200) {
+        console.log(newRequest.responseXML)
+
+        var response = newRequest.responseXML;
+        var items = response.getElementsByTagName('item');
+        console.log(items)
+
+        for (var i = 0; i < items.length; i++) {
+            var product = new Product (
+                items[i].getAttribute('name'),
+                items[i].getAttribute('price'),
+                items[i].getElementsByTagName('numInStock')[0].textContent
+            )
+            materials.push(product);
+            // console.log(items[i].getAttribute('name'));
+            // console.log(items[i].getAttribute('price'));
+            // console.log(items[i].getElementsByTagName('numInStock')[0].textContent);
+        }
+
+        populateInventoryDOM();
+
+    }
+};
+
+newRequest.open('Get', 'data/stock.xml', true);
+newRequest.send(null);
+
+
+
+

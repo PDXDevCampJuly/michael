@@ -7,7 +7,6 @@ class View:
 
     def __init__(self):
         """Init's the view. """
-        self.outcome = ""
         self.adjustment = -1
 
     def starting_print(self):

@@ -12,8 +12,6 @@ class Model:
         self.players = {1: ["Player_a", "\u25CF"], 2: ["Player_b", "\u25CB"]}
         self.current_player = 1
         self.playing_player = self.players[1]
-        self.row = 6
-        self.column = 7
         self.grid = [[" "] * 6 for x in range(7)]
 
     def update_board(self, move):

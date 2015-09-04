@@ -182,31 +182,25 @@ var newRequest = new XMLHttpRequest();
 // console.log(newRequest);
 newRequest.onload = function() {
     if (newRequest.status === 200) {
-        console.log(newRequest.responseXML)
-
-        var response = newRequest.responseXML;
-        var items = response.getElementsByTagName('item');
-        console.log(items)
+        var response = JSON.parse(newRequest.responseText);
+        // console.log(response);
+        // console.log(response.items);
+        var items = response.items
 
         for (var i = 0; i < items.length; i++) {
             var product = new Product (
-                items[i].getAttribute('name'),
-                items[i].getAttribute('price'),
-                items[i].getElementsByTagName('numInStock')[0].textContent
+                items[i].name,
+                items[i].price,
+                items[i].numInStock
             )
             materials.push(product);
-            // console.log(items[i].getAttribute('name'));
-            // console.log(items[i].getAttribute('price'));
-            // console.log(items[i].getElementsByTagName('numInStock')[0].textContent);
         }
-
         populateInventoryDOM();
-
     }
 };
 
-newRequest.open('Get', 'data/stock.xml', true);
-newRequest.send(null);
+newRequest.open('Get', 'data/stock.json', true); // prepare the request
+newRequest.send(null); // send the request
 
 
 

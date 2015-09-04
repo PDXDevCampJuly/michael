@@ -185,7 +185,7 @@ newRequest.onload = function() {
         var response = JSON.parse(newRequest.responseText);
         // console.log(response);
         // console.log(response.items);
-        var items = response.inventory.items
+        var items = response.inventory.item
 
         for (var i = 0; i < items.length; i++) {
             var product = new Product (

@@ -31,9 +31,6 @@ $('[type=button]').on('click', function() {
         },
         200: function() {
           location.reload();
-          // $('#title').val(""); //clear input fields
-          // $('#body').val("");
-          // $msgSuccess.removeClass("hidden").addClass("show");
         }
       }
     });
@@ -42,10 +39,11 @@ $('[type=button]').on('click', function() {
     $('#title').val("");
     $('#body').val("");
 
-    //success msg undo button (refer to index.HTML)
+    //success msg (refer to index.HTML)
     $msgSuccess.removeClass("hidden").addClass("show");
 
   } else {
+    //error msg (refer to index.HTML)
     $msgDanger.removeClass("hidden").addClass("show");
   }
 });

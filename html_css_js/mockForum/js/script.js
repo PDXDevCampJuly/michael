@@ -2,6 +2,8 @@
 // Utilizing Google Spreadsheets API
 
 var $forumWrapper = $('#forumWrapper');
+var $msgSuccess = $('[class*=success]');
+var $msgDanger = $('[class*=danger]');
 
 // AJAX Get - grabs the data from the spreadsheet
 $.ajax({
@@ -12,6 +14,7 @@ $.ajax({
   error: function() { console.log("fail.."); },
   success: function(data) {
     entries = data.feed.entry;
+    entries.reverse(); // show the last forum post first
     for (var i = 0; i < entries.length; i++) {
       var title = entries[i].gsx$posttitle.$t;
       var body = entries[i].gsx$postbody.$t;
@@ -19,12 +22,15 @@ $.ajax({
       // console.log(entries[i].gsx$posttitle.$t);
       createForumPost(title, body);
     };
-    console.log(entries[3].gsx$postbody.$t);
   }
 });
 
 // populates the posts to the webpage
 function createForumPost(title, body) {
+
+  // hide helper messages
+  $msgSuccess.hide();
+  $msgDanger.hide();
 
   // console.log(title, body);
   $forumWrapper.append('<div class="alert alert-info" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>');
@@ -45,17 +51,17 @@ $('form').on('submit', function(e) {
         0: function (){
           $('#title').val("");
           $('#body').val("");
-          alert('successful #1');
+          $msgSuccess.toggleClass("hidden show");
         },
         200: function (){
           $('#title').val("");
           $('#body').val("");
-          alert('successful #2');
+          $msgSuccess.toggleClass("hidden show");
         }
       }
     })
   } else {
-    alert("could be blank.. could be an error..");
+    $msgDanger.toggleClass("hidden show");
   }
 })
 

@@ -5,37 +5,13 @@ var $forumWrapper = $('#forumWrapper');
 var $msgSuccess = $('[class*=success]');
 var $msgDanger = $('[class*=danger]');
 
-// AJAX Get - grabs the data from the spreadsheet
-$.ajax({
-  type: 'GET',
-  dataType: 'jsonp',
-  crossDomain: true,
-  url: 'https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script',
-  error: function() { console.log("fail.."); },
-  success: function(data) {
-    entries = data.feed.entry;
-    entries.reverse(); // show the last forum post first
-    for (var i = 0; i < entries.length; i++) {
-      var title = entries[i].gsx$posttitle.$t;
-      var body = entries[i].gsx$postbody.$t;
-      createForumPost(title, body);
-    };
-  }
-});
-
-// populates the posts to the webpage
-function createForumPost(title, body) {
+// submits a post to the Google spreadsheet
+$('form').on('submit', function(e) {
 
   // hide helper messages
   $msgSuccess.hide();
   $msgDanger.hide();
 
-  // console.log(title, body);
-  $forumWrapper.append('<div class="alert alert-info" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>');
-}
-
-// submits a post to the spreadsheet
-$('form').on('submit', function(e) {
   e.preventDefault();
   var title = $('#title').val();
   var body = $('#body').val();
@@ -62,5 +38,28 @@ $('form').on('submit', function(e) {
     $msgDanger.removeClass("hidden").addClass("show");
   }
 })
+
+// AJAX Get - grabs the data from the Google spreadsheet
+$.ajax({
+  type: 'GET',
+  dataType: 'jsonp',
+  crossDomain: true,
+  url: 'https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script',
+  error: function() { console.log("fail.."); },
+  success: function(data) {
+    entries = data.feed.entry;
+    entries.reverse(); // show the last forum post first
+    for (var i = 0; i < entries.length; i++) {
+      var title = entries[i].gsx$posttitle.$t;
+      var body = entries[i].gsx$postbody.$t;
+      createForumPost(title, body);
+    };
+  }
+});
+
+// populates the posts to the webpage for the user to see
+function createForumPost(title, body) {
+  $forumWrapper.append('<div class="alert alert-info" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>');
+}
 
 

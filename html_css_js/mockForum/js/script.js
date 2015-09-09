@@ -18,8 +18,6 @@ $.ajax({
     for (var i = 0; i < entries.length; i++) {
       var title = entries[i].gsx$posttitle.$t;
       var body = entries[i].gsx$postbody.$t;
-      // console.log(entries[i].gsx$postbody.$t);
-      // console.log(entries[i].gsx$posttitle.$t);
       createForumPost(title, body);
     };
   }
@@ -51,17 +49,17 @@ $('form').on('submit', function(e) {
         0: function (){
           $('#title').val("");
           $('#body').val("");
-          $msgSuccess.toggleClass("hidden show");
+          $msgSuccess.removeClass("hidden").addClass("show");
         },
         200: function (){
           $('#title').val("");
           $('#body').val("");
-          $msgSuccess.toggleClass("hidden show");
+          $msgSuccess.removeClass("hidden").addClass("show");
         }
       }
     })
   } else {
-    $msgDanger.toggleClass("hidden show");
+    $msgDanger.removeClass("hidden").addClass("show");
   }
 })
 

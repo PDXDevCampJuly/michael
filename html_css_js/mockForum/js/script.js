@@ -5,12 +5,18 @@ var $forumWrapper = $('#forumWrapper');
 var $msgSuccess = $('[class*=success]');
 var $msgDanger = $('[class*=danger]');
 
+  // hide helper messages
+$('input').on('focus', function() {
+  $msgSuccess.removeClass("show").addClass("hidden");
+  $msgDanger.removeClass("show").addClass("hidden");
+})
+$('textarea').on('focus', function() {
+  $msgSuccess.removeClass("show").addClass("hidden");
+  $msgDanger.removeClass("show").addClass("hidden");
+})
+
 // submits a post to the Google spreadsheet
 $('form').on('submit', function(e) {
-
-  // hide helper messages
-  $msgSuccess.hide();
-  $msgDanger.hide();
 
   e.preventDefault();
   var title = $('#title').val();

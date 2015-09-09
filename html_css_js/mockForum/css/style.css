@@ -6,12 +6,12 @@ h1 {
   margin-top: 0;
   padding: 20px 0;
 }
+.help-msg {
+  margin-top: 15px;
+}
 section {
   position: relative;
   height: 640px;
   overflow-y: scroll;
-}
-.help-msg {
-  margin-top: 15px;
 }
 

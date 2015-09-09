@@ -2,8 +2,8 @@
 // Utilizing Google Spreadsheets API
 
 var $forumWrapper = $('#forumWrapper');
-var $msgSuccess = $('[class*=success]');
-var $msgDanger = $('[class*=danger]');
+var $msgSuccess = $('.text-success');
+var $msgDanger = $('.text-danger');
 
   // hide helper messages
 $('input').on('focus', function() {
@@ -61,12 +61,12 @@ $.ajax({
       createForumPost(title, body);
     };
   },
-  timeout: 3000
+  timeout: 10000
 });
 
 // populates the posts to the webpage for the user to see
 function createForumPost(title, body) {
-  $forumWrapper.append('<div class="alert alert-info" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>');
+  $forumWrapper.append('<div class="alert alert-warning" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>');
 }
 
 

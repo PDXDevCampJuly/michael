@@ -60,7 +60,8 @@ $.ajax({
       var body = entries[i].gsx$postbody.$t;
       createForumPost(title, body);
     };
-  }
+  },
+  timeout: 3000
 });
 
 // populates the posts to the webpage for the user to see

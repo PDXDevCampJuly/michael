@@ -1,25 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mock Forum | Michael Williams</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Custom styles -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 
 <div class="container">
-  <form id="submitPost" action="" method="post">
-    <label for="title">title </label>
-    <input id="title" name="title" type="text" placeholder="subject">
 
-    <label for="body">body </label>
-    <textarea id="body" rows="5" cols="20" placeholder="message"></textarea>
+  <h1 class="text-center text-muted navbar navbar-default navbar-fixed-top">Mock Forum</h1>
+
+  <!-- form to post message -->
+  <form class="col-xs-6">
+    <div class="form-group">
+      <!-- <label for="title" class="control-label">Title</label> -->
+      <input type="text" id="title" class="form-control input-lg" placeholder="subject" >
+    </div>
+    <div class="form-group">
+      <!-- <label for="body" class="control-label">Message</label> -->
+      <textarea id="body" class="form-control input-lg" rows="5" placeholder="message" ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+
+    <!-- helper messages -->
+    <h4 class="help-msg text-success">Message Sent!</h4>
+    <h4 class="help msg text-danger">Message Error! Try again.</h4>
   </form>
-  <button type"submit" form="submitPost" value="Submit">Submit</button>
 
-  <section id="forumWrapper"></section>
+  <!-- forum posts -->
+  <section id="forumWrapper" class="col-xs-6">
+    <!-- posts populate here -->
+  </section>
 </div>
 
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted text-center">&copy; 2015 michael williams</p>
+  </div>
+  </footer>
+
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

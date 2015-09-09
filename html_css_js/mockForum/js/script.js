@@ -27,7 +27,7 @@ $.ajax({
 function createForumPost(title, body) {
 
   // console.log(title, body);
-  $forumWrapper.append('<div><p>' + title + '</p><p>' + body + '</p></div>');
+  $forumWrapper.append('<div class="alert alert-info" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>');
 }
 
 // submits a post to the spreadsheet

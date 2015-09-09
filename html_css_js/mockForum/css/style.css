@@ -1,11 +1,17 @@
-body {
-  background-color: #eee;
-}
 .container {
-  width: 90%;
-  margin: 0 auto;
+  padding-top: 120px;
 }
-label, input {
-  padding: 5px;
-  display: block;
+h1 {
+  background-color: #eee;
+  margin-top: 0;
+  padding: 20px 0;
 }
+section {
+  position: relative;
+  height: 640px;
+  overflow-y: scroll;
+}
+.help-msg {
+  margin-top: 30px;
+}
+

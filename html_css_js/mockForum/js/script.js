@@ -1,4 +1,4 @@
-// mock forum by michael
+// Responsive Mock Forum by michael
 // Utilizing Google Spreadsheets API
 
 var $forumWrapper = $('#forumWrapper');
@@ -21,23 +21,30 @@ $('[type=button]').on('click', function() {
   var body = $('#body').val();
   if ((title !== "") && (body !== "")) {
     $.ajax({
-      url: "https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse",
       type: "POST",
       dataType: "xml",
+      url: "https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse",
       data: { "entry_434124687": title, "entry_1823097801": body },
       statusCode: {
         0: function() {
-          $('#title').val("");
-          $('#body').val("");
-          $msgSuccess.removeClass("hidden").addClass("show");
+          location.reload();
         },
         200: function() {
-          $('#title').val("");
-          $('#body').val("");
-          $msgSuccess.removeClass("hidden").addClass("show");
+          location.reload();
+          // $('#title').val(""); //clear input fields
+          // $('#body').val("");
+          // $msgSuccess.removeClass("hidden").addClass("show");
         }
       }
     });
+
+    //clear input fields
+    $('#title').val("");
+    $('#body').val("");
+
+    //success msg undo button (refer to index.HTML)
+    $msgSuccess.removeClass("hidden").addClass("show");
+
   } else {
     $msgDanger.removeClass("hidden").addClass("show");
   }
@@ -60,6 +67,7 @@ $.ajax({
   }
 });
 
+// creates elements for DOM manipulation
 // populates the posts to the webpage for the user to see
 function createForumPost(title, body) {
   $forumWrapper.append('<div class="alert alert-warning" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>').hide().fadeIn('slow');

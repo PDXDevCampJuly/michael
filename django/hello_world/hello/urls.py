@@ -7,4 +7,5 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', views.index, name='index'),
     url(r'^corgi.html', views.awesome, name='awesome'),
+    url(r'^forum', views.forum, name='forum'),
 ]

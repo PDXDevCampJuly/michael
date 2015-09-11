@@ -7,8 +7,7 @@ var $msgDanger = $('.text-danger');
 
   // hide helper message(s)
 $('input, textarea').on('focus', function() {
-  $msgSuccess.removeClass("show").addClass("hidden");
-  $msgDanger.removeClass("show").addClass("hidden");
+  $msgSuccess, $msgDanger.removeClass("show").addClass("hidden");
 });
 
 // submits a post to the Google spreadsheet
@@ -66,7 +65,7 @@ $('button').on('click', function(event) {
 // creates elements for DOM manipulation
 // populates the posts to the webpage for the user to see
 function createForumPost(title, body) {
-  $forumWrapper.append('<div class="alert alert-warning" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>').hide().fadeIn('slow');
+  $forumWrapper.append('<div class="alert alert-warning" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>');
 }
 
 

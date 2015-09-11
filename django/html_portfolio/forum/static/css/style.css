@@ -1,0 +1,41 @@
+/*
+custom styles
+heavy lifting done with Bootstrap
+*/
+
+h1 {
+  margin-top: 0;
+  padding: 20px 0;
+}
+.container {
+  padding-top: 100px;
+}
+.help-msg {
+  margin-top: 15px;
+}
+form, section {
+  margin-top: 20px;
+}
+section {
+  position: relative;
+  height: 700px;
+  overflow-y: scroll;
+}
+section p {
+  font-size: 1.1em;
+}
+
+@media screen and (max-width: 1300px) and (min-width: 992px) {
+  /*
+    the viewport is at least 992 pixels wide
+    but not greater than 13000 pixels wide
+  */
+    section {
+      height: 425px;
+    }
+    footer div {
+      padding-top: 50px !important;
+    }
+}
+
+

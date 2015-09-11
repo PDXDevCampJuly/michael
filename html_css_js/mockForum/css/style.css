@@ -26,7 +26,10 @@ section p {
 }
 
 @media screen and (max-width: 1300px) and (min-width: 992px) {
-  /* the viewport is at least 400 pixels wide */
+  /*
+    the viewport is at least 992 pixels wide
+    but not greater than 13000 pixels wide
+  */
     section {
       height: 425px;
     }

@@ -70,3 +70,13 @@ function createForumPost(title, body) {
   $forumWrapper.append('<div class="alert alert-warning" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>');
 }
 
+// // media queries for bootstrap classes
+if (window.matchMedia("(min-width: 992px)").matches) {
+  /* the viewport is at least 992 pixels wide */
+  $('input, textarea').removeClass('input-md').addClass('input-lg');
+  $('button').removeClass('btn-md').addClass('btn-lg');
+} else {
+  /* the viewport is less than 992 pixels wide */
+  $('input, textarea').removeClass('input-lg').addClass('input-md');
+  $('button').removeClass('btn-lg').addClass('btn-md');
+}

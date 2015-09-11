@@ -18,11 +18,24 @@ form, section {
 }
 section {
   position: relative;
-  height: 640px;
+  height: 700px;
   overflow-y: scroll;
 }
 section p {
   font-size: 1.1em;
+}
+
+@media screen and (max-width: 1300px) and (min-width: 992px) {
+  /*
+    the viewport is at least 992 pixels wide
+    but not greater than 13000 pixels wide
+  */
+    section {
+      height: 425px;
+    }
+    footer div {
+      padding-top: 50px !important;
+    }
 }
 
 

@@ -22,17 +22,18 @@
 
   <h1 class="text-center text-muted navbar navbar-default navbar-fixed-top">Mock Forum</h1>
 
-  <!-- form to post message -->
+  <!-- form to input/post message -->
   <form class="col-md-6 col-xs-12">
     <div class="form-group">
-      <input type="text" id="title" class="form-control input-lg" placeholder="subject" >
+      <input type="text" class="form-control input-lg" placeholder="subject" >
     </div>
     <div class="form-group">
-      <textarea id="body" class="form-control input-lg" rows="4" placeholder="message" ></textarea>
+      <textarea class="form-control input-lg" rows="4" placeholder="message" ></textarea>
     </div>
     <button type="button" class="btn btn-default btn-lg btn-block">Post</button>
 
-    <!-- helper messages -->
+    <!-- helper messages, initially hidden -->
+    <!-- appear each time the button is pressed -->
     <h4 class="help-msg text-success hidden">Message delivered!</h4>
     <h4 class="help-msg text-danger hidden">Message Error! Fields cannot be blank.</h4>
   </form>

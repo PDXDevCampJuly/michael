@@ -12,15 +12,15 @@ $('input, textarea').on('focus', function() {
 });
 
 // submits a post to the Google spreadsheet
-$('[type=button]').on('click', function() {
-  var title = $('#title').val();
-  var body = $('#body').val();
-  if ((title !== "") && (body !== "")) {
+$('button').on('click', function() {
+  var $title = $('input').val();
+  var $body = $('textarea').val();
+  if (($title !== "") && ($body !== "")) {
     $.ajax({
       type: "POST",
       dataType: "xml",
       url: "https://docs.google.com/forms/d/1blH7mM6udvlyJ0SrPmbXoNPZg8XCqDQaxHTPrK0HQbA/formResponse",
-      data: { "entry_434124687": title, "entry_1823097801": body },
+      data: { "entry_434124687": $title, "entry_1823097801": $body },
       statusCode: {
         0: function() {
           location.reload();
@@ -32,8 +32,8 @@ $('[type=button]').on('click', function() {
     });
 
     //clear input fields
-    $('#title').val("");
-    $('#body').val("");
+    $('input').val("");
+    $('textarea').val("");
 
     //success msg (refer to index.HTML)
     $msgSuccess.removeClass("hidden").addClass("show");

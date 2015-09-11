@@ -22,8 +22,13 @@ $('button').on('click', function(event) {
       data: { "entry_434124687": $title, "entry_1823097801": $body },
       statusCode: {
         0: function() {
+          //success msg (refer to index.HTML)
+          $msgSuccess.removeClass("hidden").addClass("show");
+          location.reload();
         },
         200: function() {
+          $msgSuccess.removeClass("hidden").addClass("show");
+          location.reload();
         }
       }
     });
@@ -31,9 +36,6 @@ $('button').on('click', function(event) {
     //clear input fields
     $('input').val("");
     $('textarea').val("");
-
-    //success msg (refer to index.HTML)
-    $msgSuccess.removeClass("hidden").addClass("show");
 
   } else {
     //error msg (refer to index.HTML)
@@ -67,5 +69,4 @@ $('button').on('click', function(event) {
 function createForumPost(title, body) {
   $forumWrapper.append('<div class="alert alert-warning" role="alert"><h4>' + title + '</h4><p>' + body + '</p></div>');
 }
-
 

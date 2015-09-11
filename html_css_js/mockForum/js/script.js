@@ -12,7 +12,7 @@ $('input, textarea').on('focus', function() {
 });
 
 // submits a post to the Google spreadsheet
-$('button').on('click', function() {
+$('button').on('click', function(event) {
   var $title = $('input').val();
   var $body = $('textarea').val();
   if (($title !== "") && ($body !== "")) {
@@ -23,10 +23,8 @@ $('button').on('click', function() {
       data: { "entry_434124687": $title, "entry_1823097801": $body },
       statusCode: {
         0: function() {
-          location.reload();
         },
         200: function() {
-          location.reload();
         }
       }
     });
@@ -45,21 +43,25 @@ $('button').on('click', function() {
 });
 
 // AJAX Get - grabs the data from the Google spreadsheet
-$.ajax({
-  type: 'GET',
-  dataType: 'jsonp',
-  url: 'https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script',
-  error: function() { console.log("fail.."); },
-  success: function(data) {
-    entries = data.feed.entry;
-    entries.reverse(); // show the last forum post first
-    for (var i = 0; i < entries.length; i++) {
-      var title = entries[i].gsx$posttitle.$t;
-      var body = entries[i].gsx$postbody.$t;
-      createForumPost(title, body);
+(function refreshPosts() {
+  $.ajax({
+    type: 'GET',
+    dataType: 'jsonp',
+    url: 'https://spreadsheets.google.com/feeds/list/1ntmcFZk4R0Owmez5eKc0bcu_PftAKwWyXDWTqmypPgI/default/public/values?alt=json-in-script',
+    error: function() { console.log("fail.."); },
+    success: function(data) {
+      entries = data.feed.entry;
+      entries.reverse(); // show the last forum post first
+      for (var i = 0; i < entries.length; i++) {
+        var title = entries[i].gsx$posttitle.$t;
+        var body = entries[i].gsx$postbody.$t;
+        createForumPost(title, body);
+      }
     }
-  }
-});
+  }).then(function() {
+    setTimeout(refreshPosts, 15000);
+  });
+}());
 
 // creates elements for DOM manipulation
 // populates the posts to the webpage for the user to see

@@ -5,12 +5,8 @@ var $forumWrapper = $('#forumWrapper');
 var $msgSuccess = $('.text-success');
 var $msgDanger = $('.text-danger');
 
-  // hide helper messages
-$('input').on('focus', function() {
-  $msgSuccess.removeClass("show").addClass("hidden");
-  $msgDanger.removeClass("show").addClass("hidden");
-});
-$('textarea').on('focus', function() {
+  // hide helper message(s)
+$('input, textarea').on('focus', function() {
   $msgSuccess.removeClass("show").addClass("hidden");
   $msgDanger.removeClass("show").addClass("hidden");
 });

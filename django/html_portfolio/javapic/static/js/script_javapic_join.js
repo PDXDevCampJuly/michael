@@ -43,7 +43,7 @@ function checkEmail() {
 }
 
 // prevent the submit button from resetting the page
-// otherwise route to the gallery.html
+// otherwise route to the javapic_gallery.html
 // >>>-------------------------------------------------------------->
 form.addEventListener("submit", function(){ checkFormValidation(event); });
 
@@ -51,15 +51,15 @@ function checkFormValidation(e) {
   // preventDefault for submit button
     e.preventDefault();
 
-  // otherwise submit form and go to gallery.html
+  // otherwise submit form and go to javapic_gallery.html
   if (checkName() && checkUsername() && checkEmail()) {
-    console.log(checkName(), checkUsername(), checkEmail())
-    form.setAttribute("action", "gallery.html");
+    //console.log(checkName(), checkUsername(), checkEmail())
+    //form.setAttribute("action", "gallery.html");
 
-        // redirect to gallery upon clicking submit button
-    window.location.href = "gallery.html";
+    // redirect to gallery upon clicking submit button
+    window.location.href = "javapic_gallery.html";
 
-    // Make tagline Develop something beautiful, {name} on gallery.html
+    // Make tagline Develop something beautiful, {name} on javapic_gallery.html
     // >>>------------------------------------------------------------>
     if (window.sessionStorage) {
       sessionStorage.setItem('txtName', nameInput.value);

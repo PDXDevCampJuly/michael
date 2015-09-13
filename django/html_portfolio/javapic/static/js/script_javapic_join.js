@@ -54,7 +54,7 @@ function checkFormValidation(e) {
   // otherwise submit form and go to javapic_gallery.html
   if (checkName() && checkUsername() && checkEmail()) {
     //console.log(checkName(), checkUsername(), checkEmail())
-    //form.setAttribute("action", "gallery.html");
+    //form.setAttribute("action", "javapic_jquery_gallery.html");
 
     // redirect to gallery upon clicking submit button
     window.location.href = "gallery";

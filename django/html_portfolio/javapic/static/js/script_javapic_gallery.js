@@ -23,10 +23,10 @@ function produceListOfImgNamesARRAY() {
 
     // Images 1 .. 9 need a different URL structure
     if (imgNum < 10) {
-      images.push("../static/images/pdxcg_0" + imgNum + ".jpg");
+      images.push("/../../static/images/pdxcg_0" + imgNum + ".jpg");
     } else {
       // Images 10 .. 60 need a different URL structure
-      images.push("../static/images/pdxcg_" + imgNum + ".jpg");
+      images.push("/../../static/images/pdxcg_" + imgNum + ".jpg");
     }
   }
   // console.log(images);

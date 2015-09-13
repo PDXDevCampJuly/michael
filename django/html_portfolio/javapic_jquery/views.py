@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def javapic_query(request):
-    return render(request, 'javapic_query.html')
+def javapic_jquery(request):
+    return render(request, 'javapic_jquery.html')

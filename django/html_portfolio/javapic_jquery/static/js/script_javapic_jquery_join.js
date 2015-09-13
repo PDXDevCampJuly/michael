@@ -5,15 +5,16 @@ var $form = $('#signup');
 var $nameInput = $('[name=name]');
 var $username = $('[name=username]');
 var $email = $('[type=email]');
+var $button = $('[type=submit]')
 
 // preventDefault submit button behavior
 // otherwise route to the javapic_gallery.html
-$form.on('submit', function(e) {
+$button.on('click', function(e) {
   e.preventDefault();
   if (checkValidation()) {
 
     // redirect to gallery upon clicking submit button
-    window.location.href = "javapic_gallery.html";
+    window.location.href = "gallery";
 
     // Make tagline .. {name} on javapic_gallery.html
     if (window.sessionStorage) {
@@ -29,7 +30,6 @@ $('input').on('blur', function() {
 })
 
 function checkValidation() {
-
   //  hide span
   $('span').remove();
 

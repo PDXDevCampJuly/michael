@@ -14,7 +14,7 @@ email.addEventListener("blur", function(){ checkEmail(); });
 
 // check name input field
 function checkName() {
-  if (nameInput.val().length < 2) {
+  if (nameInput.value.length < 2) {
     alert('Please provide a name of two or more characters.');
     nameInput.focus;
     return false
@@ -23,7 +23,7 @@ function checkName() {
 }
 // check username input field
 function checkUsername() {
-  if (username.val().length < 2) {
+  if (username.value.length < 2) {
     alert('Please provide a username of two or more characters.');
     username.focus;
     return false
@@ -48,10 +48,16 @@ function checkEmail() {
 form.addEventListener("submit", function(){ checkFormValidation(event); });
 
 function checkFormValidation(e) {
+  // preventDefault for submit button
+    e.preventDefault();
+
   // otherwise submit form and go to gallery.html
   if (checkName() && checkUsername() && checkEmail()) {
     console.log(checkName(), checkUsername(), checkEmail())
     form.setAttribute("action", "gallery.html");
+
+        // redirect to gallery upon clicking submit button
+    window.location.href = "gallery.html";
 
     // Make tagline Develop something beautiful, {name} on gallery.html
     // >>>------------------------------------------------------------>
@@ -60,12 +66,4 @@ function checkFormValidation(e) {
       console.log(nameInput.value);
     }
   }
-  else {
-    // preventDefault for submit button
-    e.preventDefault();
-  }
 }
-
-
-
-

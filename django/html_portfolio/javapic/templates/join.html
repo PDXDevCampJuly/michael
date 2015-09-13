@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>javapic</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{% static "css/style_javapic.css" %}" />
     <style type="text/css">
     </style>
 </head>
@@ -24,6 +26,6 @@
         </form>
     </section>
 </main>
-<script type="text/javascript" src="js/script_join.js"></script>
+<script type="text/javascript" src="{% static "js/script_join.js" %}"></script>
 </body>
 </html>

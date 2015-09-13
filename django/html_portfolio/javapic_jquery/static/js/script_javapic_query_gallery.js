@@ -6,7 +6,7 @@ var $tagline = $('.tagline');
 var images = [];
 var imgMax = 60;
 
-// Make tagline .. {name} from join.html
+// Make tagline .. {name} from javapic_join.html
 if (window.sessionStorage) {
   txtName = sessionStorage.getItem('txtName');
   $tagline.text("develop something beautiful, " + txtName);

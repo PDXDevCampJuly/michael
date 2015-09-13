@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def javapic_query(request):
+    return render(request, 'javapic_query.html')

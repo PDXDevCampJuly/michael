@@ -7,15 +7,15 @@ var $username = $('[name=username]');
 var $email = $('[type=email]');
 
 // preventDefault submit button behavior
-// otherwise route to the gallery.html
+// otherwise route to the javapic_gallery.html
 $form.on('submit', function(e) {
   e.preventDefault();
   if (checkValidation()) {
 
     // redirect to gallery upon clicking submit button
-    window.location.href = "gallery.html";
+    window.location.href = "javapic_gallery.html";
 
-    // Make tagline .. {name} on gallery.html
+    // Make tagline .. {name} on javapic_gallery.html
     if (window.sessionStorage) {
       sessionStorage.setItem('txtName', $nameInput.val());
       console.log($nameInput.val());

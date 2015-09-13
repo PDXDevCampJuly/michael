@@ -57,7 +57,7 @@ function checkFormValidation(e) {
     //form.setAttribute("action", "gallery.html");
 
     // redirect to gallery upon clicking submit button
-    window.location.href = "javapic_gallery.html";
+    window.location.href = "gallery";
 
     // Make tagline Develop something beautiful, {name} on javapic_gallery.html
     // >>>------------------------------------------------------------>

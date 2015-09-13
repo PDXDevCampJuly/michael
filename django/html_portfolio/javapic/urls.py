@@ -3,6 +3,6 @@ from javapic import views
 
 urlpatterns = [
     url(r'^$', views.javapic, name='javapic'),
-    url(r'^javapic_join.html', views.join, name='join'),
-    url(r'^javapic_gallery.html', views.gallery, name='gallery'),
+    url(r'^join/$', views.join, name='join'),
+    url(r'^join/gallery/$', views.gallery, name='gallery'),
 ]

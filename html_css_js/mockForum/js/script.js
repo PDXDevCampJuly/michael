@@ -24,11 +24,9 @@ $('button').on('click', function(event) {
         0: function() {
           //success msg (refer to index.HTML)
           $msgSuccess.removeClass("hidden").addClass("show");
-          location.reload();
         },
         200: function() {
           $msgSuccess.removeClass("hidden").addClass("show");
-          location.reload();
         }
       }
     });

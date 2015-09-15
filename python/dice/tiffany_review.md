@@ -1,9 +1,9 @@
 # Angry Dice Code Review
-### August 12, 2015
+
+### Reviewed by: [Tiffany Ralph](https://github.com/TheOneTAR)
+August 12, 2015
 
 ```
-Reviewed by: Tiffany Ralph
-
 Hi Michael! I'm reviewing this code line by line, looking at how you organized your code and logic, as well how you did things.
 
 To reference a specific line, I will use the shorthand L5, which stands for Line 5. Until I give a new line or function name, the notes I give are in relation to the last given element or structure.
@@ -29,12 +29,11 @@ L96 – This isn't actually what this function does. You know what level stage y
 nit: I wouldn't name my functions text_blank, as it implies it's a test function – to test the functionality of your code. check_input would be better, or check_stage.
 
 You have some sparse comments on some functions, but not a lot of comments within the functions themselves explaining what you're doing. Please get in the habit of commenting more :D Your future coworkers and your current instructor will thank you.
-
-### You Pass your Intro Python section
-though, spoilers, you would have passed with Distinction if you had thoroughly commented your code.
 ```
----
 
-## Action Post review: 
+## "You Pass your Intro Python section."
+... though, spoilers, you would have passed with Distinction if you had thoroughly commented your code.
+
+### Action Post review: 
 Implemented all suggestions.
 

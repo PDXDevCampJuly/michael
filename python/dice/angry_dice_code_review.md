@@ -1,6 +1,8 @@
 # Angry Dice Code Review
 ### August 12, 2015
-by Tiffany Ralph
+
+```
+Reviewed by: Tiffany Ralph
 
 Hi Michael! I'm reviewing this code line by line, looking at how you organized your code and logic, as well how you did things.
 
@@ -30,7 +32,7 @@ You have some sparse comments on some functions, but not a lot of comments withi
 
 ### You Pass your Intro Python section
 though, spoilers, you would have passed with Distinction if you had thoroughly commented your code.
-
+```
 ---
 
 ## Action Post review: 

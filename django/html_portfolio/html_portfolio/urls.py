@@ -8,10 +8,11 @@ from django.contrib import admin
     # -----------------------------------------------
 
 urlpatterns = [
-    url(r'^$', 'about.views.index', name='index'),
-    url(r'^about/', 'about.views.about', name='about'),
     url(r'^javapic/', include('javapic.urls')),
     url(r'^javapic_jquery/', include('javapic_jquery.urls')),
     url(r'^zen_mockup/', include('zen_mockup.urls')),
     url(r'^forum/', include('forum.urls')),
+
+    # new url patterns should be coded above
+    url(r'^', include('about.urls')),
 ]

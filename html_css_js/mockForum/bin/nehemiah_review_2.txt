@@ -1,0 +1,15 @@
+CSS 
+
+Looks good
+
+JS
+
+Comments cleaned up, code cleaned up. No auto refresh, but that isn't a requirement, so it looks good.
+
+html
+
+looks ok.
+
+
+
+This looks good enough to turn in.

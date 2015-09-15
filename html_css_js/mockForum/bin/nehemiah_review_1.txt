@@ -1,0 +1,21 @@
+css
+
+Nothing stands out as bad. Only note I would make is that everything except font size is in px,
+which is completely unresponsive. You import bootstrap for a lot of your css behaviour though, so
+that's less of an issue.
+
+html
+
+I like your page design, though I would make the left column smaller and the right bigger, as the
+focus should be on the messages.
+
+Javascript
+
+Line 8-16: I'm unclear as to the point of this. You might want to comment this more. I think it's
+suppose to let a message appear to inform me of success sending a post or failure, but if so it
+disappears so fast I never see it.
+
+Line 28-33: It's clearly suppose to reload the page so you catch your new posts, but it seems to
+happen so fast that doesn't always happen. You could put a delay on it of three or four seconds,
+or you could just periodically reload the page automatically to catch all new entries.
+

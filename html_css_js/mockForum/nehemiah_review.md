@@ -33,7 +33,7 @@ Hey Nehemiah, thanks for the review. I made several changes to include media que
 ### Update 
 14 September 2015
 
-Removed the set timeout of 15 seconds and success message. The page will reload on a successful POST. 
+Removed the setTimeout of 15 seconds and the success message. The page will reload on a successful POST. 
 
 ### Reviewed by: [Nehemiah Newell](https://github.com/nehemiahnewell)
 14 September 2014

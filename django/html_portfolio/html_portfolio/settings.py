@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'about',
+    'page',
     'javapic',
     'javapic_jquery',
     'zen_mockup',

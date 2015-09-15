@@ -47,7 +47,6 @@ html
 looks ok.
 ```
 ## "This looks good enough to turn in."
----
 
 ### Response
 14 September 2015

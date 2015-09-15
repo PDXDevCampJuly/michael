@@ -3,16 +3,130 @@
 <html>
 <head>
   <title>Table of Contents</title>
+  <!-- Bootstrap compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>HTML Portfolio</h1>
-    <ul>
-        <li><a href="about">About</a></li>
-        <li><a href="javapic">Javapic</a></li>
-        <li><a href="javapic_jquery">Javapic jQuery</a></li>
-        <li><a href="zen_mockup">Zen Mockup</a></li>
-        <li><a href="forum">Forum</a></li>
-    </ul>
+<div class="container">
+
+  <!-- jumbotron -->
+  <div class="jumbotron">
+    <h1>HTML Portfolio <small>Django</small></h1>
+    <p>Portfolio of projects built with HTML, CSS, JavaScript, jQuery, and Bootstrap.</p>
+  </div> <!-- end jumbotron -->
+
+  <!-- thumbnails -->
+  <!-- thumbnail about -->
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a href="about">
+          <img src="../static/images/thumbnail_about.png" height="667" width="1113" alt="...">
+        </a>
+        <div class="caption">
+          <h3>About</h3>
+          <p>Quick summary about the Author</p>
+          <div class="btn-group" role="group" aria-label="demo button">
+            <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/about" class="btn btn-default" role="button" role="button">Github</a>
+            <a href="about" class="btn btn-primary btn-md" role="button">Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- thumbnail javapic -->
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a href="javapic">
+          <img src="../static/images/thumbnail_javapic.png" height="667" width="1113" alt="...">
+        </a>
+        <div class="caption">
+          <h3>Javapic</h3>
+          <p>Image Gallery built with HTML, CSS, JavaScript</p>
+          <div class="btn-group" role="group" aria-label="demo button">
+            <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/javapic" class="btn btn-default" role="button">Github</a>
+            <a href="javapic" class="btn btn-primary btn-md" role="button">Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- thumbnail javapic_jquery -->
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a href="javapic_jquery">
+          <img src="../static/images/thumbnail_javapic_jquery.png" height="667" width="1113" alt="...">
+        </a>
+        <div class="caption">
+          <h3>Javapic jQuery</h3>
+          <p>Image Gallery built with HTML, CSS, jQuery</p>
+          <div class="btn-group" role="group" aria-label="demo button">
+            <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/javapic_jquery" class="btn btn-default" role="button">Github</a>
+            <a href="javapic_jquery" class="btn btn-primary btn-md" role="button">Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- thumbnail forum -->
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a href="forum">
+          <img src="../static/images/thumbnail_forum.png" height="667" width="1113" alt="...">
+        </a>
+        <div class="caption">
+          <h3>Forum</h3>
+          <p>AJAX GET and POST with Google Sheets API</p>
+          <div class="btn-group" role="group" aria-label="demo button">
+            <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/forum" class="btn btn-default" role="button" role="button">Github</a>
+            <a href="forum" class="btn btn-primary btn-md" role="button">Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- thumbnail zen mockup -->
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a href="zen_mockup">
+          <img src="../static/images/thumbnail_zen_mockup.png" height="667" width="1113" alt="thumbnail for zen mockup">
+        </a>
+        <div class="caption">
+          <h3>Zen Mockup</h3>
+          <p>Demonstration of CSS to spec</p>
+          <div class="btn-group" role="group" aria-label="demo button">
+            <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/zen_mockup" class="btn btn-default" role="button">Github</a>
+            <a href="zen_mockup" class="btn btn-primary btn-md" role="button">Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- thumbnail placeholder -->
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a href="#">
+          <img src="http://placehold.it/1900x950" alt="placeholder">
+        </a>
+        <div class="caption">
+          <h3>Placeholder</h3>
+          <p>This is a placeholder for this Portfolio</p>
+          <div class="btn-group" role="group" aria-label="demo button">
+            <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio" class="btn btn-default" role="button">Github</a>
+            <a href="#" class="btn btn-primary btn-md" role="button">Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end of thumnails -->
+
+</div> <!-- end container -->
+
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted text-right">&copy; 2015 michael williams</p>
+  </div>
+</footer>
 
 </body>
 </html>

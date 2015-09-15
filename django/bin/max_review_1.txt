@@ -35,6 +35,6 @@ html__portfolio/urls.py
 
 This was a good idea. Thanks for discussing this with me today to better understand how Django works and helping to implementing a 'catch all' in the html_portfolio/urls.py.
 
-Renamed the 'about' app to act as a global, more generic app; 'page'
+Renamed the 'about' app to act as a global, more generic app; 'home'
 
 

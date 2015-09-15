@@ -1,8 +1,8 @@
 # Mock Forum Code Review
-10 September 2015
 
 ```
-[1] Reviewed by: [Nehemiah Newell](https://github.com/nehemiahnewell)
+Reviewed by: [Nehemiah Newell](https://github.com/nehemiahnewell)
+10 September 2015
 
 css
 
@@ -32,7 +32,7 @@ or you could just periodically reload the page automatically to catch all new en
 Hey Nehemiah, thanks for the review. I made several changes to include media queries in the CSS and the JS (the JS media queries only change once the page is refreshed)(e.g. the form becomes smaller for mobile devices), set timeout of 15sec., removed the reload function that made the success message disappear, and added additional comments to the success message on the HTML. Let me know if you get a chance to look at it again.
 
 ```
-[2] Reviewed by: [Nehemiah Newell](https://github.com/nehemiahnewell)
+Reviewed by: [Nehemiah Newell](https://github.com/nehemiahnewell)
 14 September 2014
 
 CSS 

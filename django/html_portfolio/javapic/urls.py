@@ -1,8 +1,8 @@
 from django.conf.urls import url
-from javapic import views
+from . import views
 
 urlpatterns = [
     url(r'^$', views.javapic, name='javapic'),
-    url(r'^join/$', views.join, name='join'),
-    url(r'^join/gallery/$', views.gallery, name='gallery'),
+    url(r'^join', views.join, name='join'),
+    url(r'^gallery', views.gallery, name='gallery'),
 ]

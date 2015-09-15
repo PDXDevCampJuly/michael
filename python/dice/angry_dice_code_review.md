@@ -28,5 +28,10 @@ nit: I wouldn't name my functions text_blank, as it implies it's a test function
 
 You have some sparse comments on some functions, but not a lot of comments within the functions themselves explaining what you're doing. Please get in the habit of commenting more :D Your future coworkers and your current instructor will thank you.
 
-### You Pass your Intro Python section, though, spoilers, you would have passed with Distinction if you had thoroughly commented your code.
+### You Pass your Intro Python section, 
+though, spoilers, you would have passed with Distinction if you had thoroughly commented your code.
+
+---
+
+# Action after the review: Implemented all suggestions.
 

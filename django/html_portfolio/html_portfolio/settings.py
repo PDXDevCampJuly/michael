@@ -37,11 +37,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'page',
     'javapic',
     'javapic_jquery',
     'zen_mockup',
     'forum',
+    'home',
 )
 
 MIDDLEWARE_CLASSES = (

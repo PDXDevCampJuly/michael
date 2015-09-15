@@ -14,5 +14,5 @@ urlpatterns = [
     url(r'^forum/', include('forum.urls')),
 
     # new url patterns should be coded above
-    url(r'^', include('about.urls')),
+    url(r'^', include('home.urls')),
 ]

@@ -30,11 +30,34 @@ Loading jQuery
 RESPONSE
 14 Sept 2015
 
-html__portfolio/urls.py
-----------------------
+html__portfolio/urls.py >>>
+---
 
 This was a good idea. Thanks for discussing this with me today to better understand how Django works and helping to implementing a 'catch all' in the html_portfolio/urls.py.
 
+Added static directory.
+
 Renamed the 'about' app to act as a global, more generic app; 'home'
+
+javapic | javapic_jquery >>>
+---
+
+The URL structure for both apps are now {app}/join and {app}/gallery; no longer {app}/join/gallery.
+
+javapic_jquery >>>
+---
+
+Removed the css directory and images directory. The css and images now reference the javapic app.
+
+Converted the template reference to the jQuery to cdn.
+
+forum >>>
+
+Converted the template reference to the jQuery to cdn.
+
+Let me know, if I may clarify any changes. Thanks again.
+
+
+
 
 

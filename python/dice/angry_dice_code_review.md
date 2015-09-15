@@ -1,7 +1,6 @@
 # Michael's Angry Dice Code Review
+### August 12, 2015
 by Tiffany Ralph
-August 12, 2015
-----------------------------------------
 
 Hi Michael! I'm reviewing this code line by line, looking at how you organized your code and logic, as well how you did things.
 
@@ -10,7 +9,8 @@ To reference a specific line, I will use the shorthand L5, which stands for Line
 If I use the shorthand 'nit,' that means I'm 'nitpicking' – giving a comment that you should take into consideration, but it's not a hard rule. You could do what my nit suggests, or not, though I feel the nit is a better way.
 
 Please let me know if you have any questions on my comments! 
------------------------------------------
+
+---
 
 L2 – Nice reference to the BGG page; Giving credit where it's due.
 
@@ -28,5 +28,5 @@ nit: I wouldn't name my functions text_blank, as it implies it's a test function
 
 You have some sparse comments on some functions, but not a lot of comments within the functions themselves explaining what you're doing. Please get in the habit of commenting more :D Your future coworkers and your current instructor will thank you.
 
-You Pass your Intro Python section, though, spoilers, you would have passed with Distinction if you had thoroughly commented your code.
+### You Pass your Intro Python section, though, spoilers, you would have passed with Distinction if you had thoroughly commented your code.
 

@@ -11,22 +11,22 @@
 
 <body>
   <nav>
-    <li><a href="#" class="selected">about</a></li><li><a href="#">corg</a></li><li><a href="#">base</a></li>
+    <li><a href="#about" class="selected">about</a></li><li><a href="#competencies">competencies</a></li><li><a href="#connect">connect</a></li>
   </nav>
   <header>
     <h1>about</h1>
     <img src="{% static "images/profile_300px.jpg" %}" alt="profile picture NL" />
   </header>
   <article>
-    <section>
+    <section id="about">
       <p>Hi, I'm Michael Williams.</p>
 
-      <p>Python-based full-stack developer with a background in finances and healthcare. When I am not coding, I enjoy volunteering, exercising, exploring Oregon, and traveling. Through professional development, volunteering, and consulting roles, my mantra as a programmer is to help organizations use technology to solve real business problems.</p>
+      <p>Python-based developer with a background in finances and healthcare. When I am not coding, I enjoy volunteering, exercising, exploring Oregon, and traveling. Through professional development, volunteering, and consulting roles, my mantra as a programmer is to help organizations use technology to solve real business problems.</p>
       <blockquote>
         <p>Find a way to learn something new each day</p>
       </blockquote>
     </section>
-    <section>
+    <section id="competencies">
       <h2>Technical Competencies</h2>
       <h4>Scripting and Programming Languages, Software, Systems, Best Practices</h4>
       <ul>
@@ -58,7 +58,7 @@
     </section>
   </article>
 
-  <footer>
+  <footer id="connect">
     <a href="https://twitter.com/michael_mdw">
       <img src="{% static "images/twitter.svg" %}" alt="twitter icon to connect" />
     </a>

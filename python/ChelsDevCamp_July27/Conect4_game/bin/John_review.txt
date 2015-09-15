@@ -1,0 +1,31 @@
+Hi Chelsea! Great job on your Conect 4 game! And very shrewd of you & Michael to change the spelling of ‘Connect’ for branding purposes ;-)
+I’ve divided my comments below into your Model / View / Controller classes. 
+
+Model
+
+L10 - This is a very nice class, clean and efficient! I don’t have any criticism, though one option would be, in the event your user is having a great time with your game, you could add a function here to reset the game state and prompt them for a new game in the Controller.  
+
+View
+
+L3 - Do you use the zip_longest function in your View class, or maybe it was from an earlier version of your code? I believe you could delete it without any adverse effects on your code.   
+
+L10 - I’m not sure you need the self.adjustment variable in the View here. I notice you use it inside update_board in the Model class, but I don’t believe it ever leaves that function. 
+
+L27 - Nice logic here!
+
+L31 - Your show_turn function is rather long. One possibility would be to take the player’s input and parse it in the Controller. Also, it might be a good idea to manage the logic for the conversion in one function as your error handling is a little spotty. I notice that entering a string returns both print statements (the try/ except and the if/ else) whereas entering an invalid int only returns the if/ else statement. 
+
+L62 - See L83 comment in the Controller where you’re passing a player into this function. 
+
+Controller
+
+L21 - Since you initialized with this variable, this line could be eliminated to make your code more efficient. 
+
+L45 - I like this function, I think you did a good job of figuring out an efficient way to check for a win here:)
+
+L83 - You’re passing in a player to show_tie, but in the View, it doesn’t take a player argument, so this results in a bug. You could just delete the playing_player that’s being passed here and this would fix it.   
+
+****
+
+Overall I think your code is really well-written. For the most part, you don’t duplicate things and I could only find the the one bug mentioned above. You also do a good job of commenting your functions and making clear, straightforward names for them.  
+

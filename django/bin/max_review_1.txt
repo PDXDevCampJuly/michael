@@ -26,3 +26,15 @@ Loading jQuery
 * If you want each app to carry the dependency jquery it might be wise to name them uniquely, with your current setup only of the jquery files is utilized, not both. Meaning the first app listed in your INSTALLED_APPS list’s JQuery version is loaded, which could cause issues.
 * You could switch to a CDN to avoid this, or you can make a `static/js` directory structure as a sibling to all of your django apps. This is where you could place common assets like jQuery
 
+===
+RESPONSE
+14 Sept 2015
+
+html__portfolio/urls.py
+----------------------
+
+This was a good idea. Thanks for discussing this with me today to better understand how Django works and helping to implementing a 'catch all' in the html_portfolio/urls.py.
+
+Renamed the 'about' app to act as a global, more generic app; 'page'
+
+

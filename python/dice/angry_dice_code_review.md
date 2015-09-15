@@ -1,4 +1,4 @@
-# Michael's Angry Dice Code Review
+# Angry Dice Code Review
 ### August 12, 2015
 by Tiffany Ralph
 

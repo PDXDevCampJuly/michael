@@ -1,0 +1,11 @@
+footer p {
+  text-align: right;
+}
+img[alt="twitter icon to connect"] {
+  box-shadow: none;
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+  border: initial;
+  border-radius: initial;
+}

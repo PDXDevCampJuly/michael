@@ -56,3 +56,30 @@ Converted the template reference to the jQuery to cdn.
 ---
 Let me know, if I may clarify any changes or if you have some suggestions on where to go from here… Thanks again.
 
+
+### Reviewed by: [Max Resnick](https://github.com/PDXDevCampJuly/max-resnick)
+August 16, 2015
+
+```
+
+`home/urls.py`
+--------------
+
+* L2 can be 86’d
+
+`html_portfolio/urls.py`
+-----------------------
+
+* L2 can be 86’d
+
+`home/templates`
+----------------
+
+* L1 of about.html && index.html should be killed, your base should include that.
+* L16 - L21, L49 - L62 rather than using an HTML comment, use a django template comment. This will prevent it from render so the browser will never see it.
+* L6 - L23 - ideally you should go ahead and put this as a template block called `header`, or better yet multiple blocks named, `meta`, `css`, `javasript` this way you can overide via completly blocking them or adding to them based on the needs of a template that’s extending base.html
+* L23, there’s no need for this if L6 - L23 become new blocks
+* If you plan on taking this further, i.e. making this public, consider breaking your templates down further. Consider how could all of your apps extend from base, and add their needed JS and CSS
+```
+
+

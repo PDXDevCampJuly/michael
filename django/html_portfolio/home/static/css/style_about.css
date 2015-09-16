@@ -3,7 +3,9 @@ body {
   background-color:#eee;
   color: #333;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  margin: 0 15% 25px;
+}
+.wrapper {
+  margin: 100px 15% 25px;
 }
 header {
   width: 100%;
@@ -45,7 +47,7 @@ p:nth-child(1)::first-letter {
 }
 
 /* nav */
-nav {
+/* nav {
   width: 100%;
   text-align: center;
   font-size: 1.5em;
@@ -64,7 +66,7 @@ nav li a {
   color: #999;
   heigth: 100%;
   width: 100%;
-}
+} */
 
 /* about.html section introduction */
 blockquote {

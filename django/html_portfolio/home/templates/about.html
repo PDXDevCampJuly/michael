@@ -1,20 +1,25 @@
 <!DOCTYPE html>
+{% extends "base.html" %}
 {% load staticfiles %}
 
-<html>
+{% block custom_header %}
 
-<head>
-  <title>about | michael williams</title>
+  <!-- custom styles -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="{% static "css/style_about.css" %} ">
-</head>
 
-<body>
-  <nav>
+{% endblock %}
+
+
+{% block content %}
+
+<!--   <nav>
     <li><a href="#about" class="selected">about</a></li><li><a href="#competencies">competencies</a></li><li><a href="#connect">connect</a></li>
-  </nav>
+  </nav> -->
+
+  <div class="wrapper">
   <header>
-    <h1>about</h1>
+<!--     <h1>about</h1> -->
     <img src="{% static "images/profile_300px.jpg" %}" alt="profile picture NL" />
   </header>
   <article>
@@ -57,13 +62,6 @@
       </ul>
     </section>
   </article>
+  </div>
 
-  <footer id="connect">
-    <a href="https://twitter.com/michael_mdw">
-      <img src="{% static "images/twitter.svg" %}" alt="twitter icon to connect" />
-    </a>
-    <p>&copy; 2015 michael williams</p>
-  </footer>
-</body>
-
-</html>
+{% endblock %}

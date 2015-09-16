@@ -15,7 +15,6 @@ html__portfolio/urls.py
 * If you want to use `about` as an app that handles some basic pages of content like an Index or About Me, that’s good but are you going to add another another url pattern for the next page in the “global” urls file? I might suggest a defining pattern for the about app, it could be a catch all as well... Meaning if you moved it to the bottom of the tuple, it will be the last url checked against, and your `about` app could catch everything else using the pattern `r’^’`, then the `about/urls.py` could handle that.
 * The way you’ve structure L11 & L12 makes `about/urls.py` a bit pointless, your bypassing `about/urls.py` and going directly to the views function. You should use a catch all method mention in the previous comment, or pass the about patterns to the `about/urls.py` via `include()`, or remove the `about/urls.py`.
 
-
 javapic/urls.py
 ---------------
 
@@ -31,4 +30,29 @@ Loading jQuery
 
 ### Response
 14 September 2015
+
+##### html__portfolio/urls.py >>>
+
+This was a good idea. Thanks for discussing this with me today to better understand how Django works and helping to implementing a 'catch all' in the html_portfolio/urls.py.
+
+Added static directory.
+
+Renamed the 'about' app to act as a global, more generic app; 'home'
+
+##### javapic | javapic_jquery >>>
+
+The URL structure for both apps are now {app}/join and {app}/gallery; no longer {app}/join/gallery.
+
+##### javapic_jquery >>>
+
+Removed the css directory and images directory. The css and images now reference the javapic app.
+
+Converted the template reference to the jQuery to cdn.
+
+##### forum >>>
+
+Converted the template reference to the jQuery to cdn.
+
+---
+Let me know, if I may clarify any changes or if you have some suggestions on where to go from here… Thanks again.
 

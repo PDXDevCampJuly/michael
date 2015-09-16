@@ -36,9 +36,6 @@ img {
   display: block;
   margin: 0 auto;
 }
-footer img {
-  box-shadow: none;
-}
 p:nth-child(1)::first-letter {
   font-weight: bold;
   color: #ccc;
@@ -102,16 +99,17 @@ li h4 {
 }
 
 /* footer */
-footer p {
+/* footer p {
   text-align: right;
 }
 img[alt="twitter icon to connect"] {
+  box-shadow: none;
   width: 50px;
   display: block;
   margin: 0 auto;
   border: initial;
   border-radius: initial;
-}
+} */
 
 /*
     @media screen and (max-width: 800px) {

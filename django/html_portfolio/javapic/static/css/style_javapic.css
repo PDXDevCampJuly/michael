@@ -155,3 +155,12 @@ input {
 .display_none {
     display: none;
 }
+
+/* custom css */
+header {
+    margin-top: 75px;
+}
+.jumbotron {
+    margin-bottom: 0;
+}
+

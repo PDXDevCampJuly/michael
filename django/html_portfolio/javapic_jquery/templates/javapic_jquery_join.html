@@ -1,15 +1,21 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load staticfiles %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>javapic jQuery</title>
-    <link rel="stylesheet" href="{% static "css/style_javapic.css" %}">
-    <style type="text/css">
-    </style>
-</head>
-<body>
+{% block head %}
+
+  {% include "base_metadata.html" %}
+  {% include "base_css_links.html" %}
+
+  {% block css_links %}
+    <!-- custom styles -->
+    <link rel="stylesheet" href="{% static "css/style_javapic.css" %}" />
+
+  {% endblock %}
+
+    <title>join | mple by michael williams</title>
+{% endblock %}
+
+{% block body %}
 
 <main>
     <section class="signup">
@@ -26,7 +32,12 @@
         </form>
     </section>
 </main>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="{% static "js/script_javapic_jquery_join.js" %}"></script>
-</body>
-</html>
+
+{% endblock %}
+
+{% block js_scripts %}
+
+  {% include "base_js_scripts.html" %}
+    <script type="text/javascript" src="{% static "js/script_javapic_jquery_join.js" %}"></script>
+
+{% endblock %}

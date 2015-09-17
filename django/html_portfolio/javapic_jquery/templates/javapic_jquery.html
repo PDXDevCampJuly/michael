@@ -1,14 +1,18 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load staticfiles %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>javapic jQuery</title>
-    <link rel="stylesheet" href="{% static "css/style_javapic.css" %}">
-</head>
-<body>
+{% block head %}
+  {% include "base_metadata.html" %}
+  {% include "base_css_links.html" %}
 
+  {% block css_links %}
+    <link rel="stylesheet" href="{% static "css/style_javapic.css" %}" />
+  {% endblock %}
+
+    <title>javapic jQuery | mple by michael williams</title>
+{% endblock %}
+
+{% block body %}
 <main>
     <header>javapic <span class="tagline">develop something beautiful</span></header>
     <div id="jumbotron" class="jumbotron">
@@ -17,7 +21,13 @@
     <div class="bottom_jumbo"><a href="join">join now</a></div>
 
 </main>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+{% endblock %}
+
+{% block js_scripts %}
+  {% include "base_js_scripts.html" %}
 <script type="text/javascript" src="{% static "js/script_javapic_jquery.js" %}"></script>
-</body>
-</html>
+
+{% endblock %}
+
+

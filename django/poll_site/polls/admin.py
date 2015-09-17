@@ -6,7 +6,7 @@ from .models import Choice
 # Register your models here.
 
 # makes custom changes
-classQuestionAdmin(admin.ModelAdmin):
+class QuestionAdmin(admin.ModelAdmin):
   # rearranges fields in admin
   fields = ['pub_date', 'question_text']
   # displays the question instead of 'question' object

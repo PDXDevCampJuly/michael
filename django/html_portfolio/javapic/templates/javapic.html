@@ -1,23 +1,19 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load staticfiles %}
 
-{% extends "base.html" %}
-{% "base_metadata.html" %}
+{% block head %}
 
-{% block css_links %}
-{% "base_css.html" %}
-<!-- <html lang="en"> -->
-<!-- <head> -->
-    <meta charset="UTF-8">
+  {% include "base_metadata.html" %}
+  {% include "base_css_links.html" %}
+
+  {% block css_links %}
     <link rel="stylesheet" href="{% static "css/style_javapic.css" %}" />
-    <title>javapic | mple by michael williams</title>
+  {% endblock %}
 
+    <title>javapic | mple by michael williams</title>
 {% endblock %}
 
-<!-- </head> -->
-<!-- <body> -->
-
-{% block main_content %}
+{% block body %}
 
 <main>
     <header>javapic <span class="tagline">develop something beautiful</span></header>
@@ -25,15 +21,14 @@
         <div>a picture is worth a 1000 words</div>
     </div>
     <div class="bottom_jumbo"><a href="join">join now</a></div>
-
 </main>
 
 {% endblock %}
 
 {% block js_scripts %}
 
-<!-- <script type="text/javascript" src="jQuery/jquery-2.1.4.min.js"></script> -->
-<script type="text/javascript" src="{% static "js/script_javapic.js" %}"></script>
+  {% include "base_js_scripts.html" %}
+  <script type="text/javascript" src="{% static "js/script_javapic.js" %}"></script>
 
 {% endblock %}
 

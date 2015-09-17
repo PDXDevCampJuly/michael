@@ -31,7 +31,6 @@ main {
     border-radius: 2px;
     box-shadow: 0px 0px 10px #333;
     color: #fff;
-
 }
 
 .jumbotron div {
@@ -156,11 +155,17 @@ input {
     display: none;
 }
 
-/* custom css */
-header {
+
+/* ---------- django custom css ---------- */
+header, section.signup {
     margin-top: 75px;
 }
 .jumbotron {
     margin-bottom: 0;
 }
+section.signup {
+    width: 350px;
+    border-radius: 20px;
+}
+
 

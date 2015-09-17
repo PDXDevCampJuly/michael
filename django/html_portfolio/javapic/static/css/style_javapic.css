@@ -157,15 +157,15 @@ input {
 
 
 /* ---------- django custom css ---------- */
-header, section.signup {
+main * {
+    box-sizing: content-box;
+}
+main {
     margin-top: 75px;
 }
 .jumbotron {
     margin-bottom: 0;
 }
-section.signup {
-    width: 350px;
-    border-radius: 20px;
-}
+
 
 

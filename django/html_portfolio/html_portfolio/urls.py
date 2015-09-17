@@ -1,5 +1,5 @@
 from django.conf.urls import include, url
-from django.contrib import admin
+# from django.contrib import admin
 
     # Examples:
     # url(r'^$', 'html_portfolio.views.home', name='home'),

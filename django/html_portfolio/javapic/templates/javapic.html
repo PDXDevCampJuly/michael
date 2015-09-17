@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-{% extends "base.html" %}
 {% load staticfiles %}
 
-{% block custom_header %}
+{% extends "base.html" %}
+{% "base_metadata.html" %}
 
+{% block css_links %}
+{% "base_css.html" %}
 <!-- <html lang="en"> -->
 <!-- <head> -->
     <meta charset="UTF-8">
@@ -15,7 +17,7 @@
 <!-- </head> -->
 <!-- <body> -->
 
-{% block content %}
+{% block main_content %}
 
 <main>
     <header>javapic <span class="tagline">develop something beautiful</span></header>
@@ -28,7 +30,7 @@
 
 {% endblock %}
 
-{% block custom_footer %}
+{% block js_scripts %}
 
 <!-- <script type="text/javascript" src="jQuery/jquery-2.1.4.min.js"></script> -->
 <script type="text/javascript" src="{% static "js/script_javapic.js" %}"></script>

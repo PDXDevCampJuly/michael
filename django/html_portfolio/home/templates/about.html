@@ -1,25 +1,21 @@
-<!DOCTYPE html>
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block custom_header %}
+{% block head %}
+  {% include "base_metadata.html" %}
+  {% include "base_css_links.html" %}
 
-  <!-- custom styles -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="{% static "css/style_about.css" %} ">
-  <title>about | mple by michael williams</title>
-
+  {% block css_links %}
+    <!-- custom styles -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static "css/style_about.css" %} ">
+    <title>about | mple by michael williams</title>
+  {% endblock %}
 {% endblock %}
 
-{% block content %}
-
-<!--   <nav>
-    <li><a href="#about" class="selected">about</a></li><li><a href="#competencies">competencies</a></li><li><a href="#connect">connect</a></li>
-  </nav> -->
-
+{% block body %}
   <div class="wrapper">
   <header>
-<!--     <h1>about</h1> -->
     <img src="{% static "images/profile_300px.jpg" %}" alt="profile picture NL" />
   </header>
   <article>
@@ -63,5 +59,4 @@
     </section>
   </article>
   </div>
-
 {% endblock %}

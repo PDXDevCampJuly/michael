@@ -1,12 +1,23 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% load staticfiles %}
 
-<html>
-<head>
-  <title>Table of Contents | mple by michael williams</title>
-  <!-- Bootstrap compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-</head>
-<body>
+{% block head %}
+  {% include "base_metadata.html" %}
+  {% include "base_css_links.html" %}
+  <style>
+    .jumbotron {
+      margin-top: 5px;
+    }
+  </style>
+
+  {% block css_links %}{% endblock %}
+
+    {% block title %} Mini CSS Zen Garden: The Beauty of CSS Design {% endblock %}
+{% endblock %}
+
+{% block navbar_subtext %} Mini CSS Zen Garden {% endblock %}
+
+{% block body %}
 <div class="container">
 
   <!-- jumbotron -->
@@ -121,12 +132,8 @@
   </div> <!-- end of thumnails -->
 
 </div> <!-- end container -->
+{% endblock %}
 
-<footer class="footer">
-  <div class="container">
-    <p class="text-muted text-right">&copy; 2015 michael williams</p>
-  </div>
-</footer>
-
-</body>
-</html>
+{% block js_scripts %}
+  {% include "base_js_scripts.html" %}
+{% endblock %}

@@ -6,10 +6,12 @@
 
 {% block head %}
 
-  {% block metadata %}{% endblock %}
-  {% block css_links %}{% endblock %}
+  {# metadata #}
+  {# css links #}
 
 {% endblock %}
+
+  <title>{% block title %}{% endblock %} | mple by michael williams</title>
 
 </head>
 <body>
@@ -25,18 +27,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/..">mple</a>
+        <a class="navbar-brand" href="{% url 'index' %}">mple</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/..">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="javapic">Javapic</a></li>
-          <li><a href="javapic_jquery">Javapic jQuery</a></li>
-          <li><a href="#">Forum</a></li>
-          <li><a href="#">Zen Mockup</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'javapic' %}">Javapic</a></li>
+          <li><a href="{% url 'javapic_jquery' %}">Javapic jQuery</a></li>
+          <li><a href="{% url 'forum' %}">Forum</a></li>
+          <li><a href="{% url 'zen_mockup' %}">Zen Mockup</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

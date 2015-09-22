@@ -32,14 +32,14 @@
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <a href="{% url 'about' %}">
-          <img src="../static/images/thumbnail_about.png" height="667" width="1113" alt="...">
+          <img src="../static/images/thumbnail_about.png" height="667" width="1113" alt="thumbnail for about demo">
         </a>
         <div class="caption">
           <h3>About</h3>
-          <p>Quick summary about the Author</p>
+          <p>Quick summary about the Developer</p>
           <div class="btn-group" role="group" aria-label="demo button">
             <a href="https://github.com/PDXDevCampJuly/michael_devCamp/blob/master/django/html_portfolio/home/templates/about.html" class="btn btn-default" role="button" role="button">Github</a>
-            <a href="about" class="btn btn-primary btn-md" role="button">Demo</a>
+            <a href="{% url 'about' %}" class="btn btn-primary btn-md" role="button">Demo</a>
           </div>
         </div>
       </div>
@@ -48,15 +48,15 @@
   <!-- thumbnail javapic -->
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <a href="javapic">
-          <img src="../static/images/thumbnail_javapic.png" height="667" width="1113" alt="...">
+        <a href="{% url 'javapic:index' %}">
+          <img src="../static/images/thumbnail_javapic.png" height="667" width="1113" alt="thumbnail for javapic demo">
         </a>
         <div class="caption">
           <h3>Javapic</h3>
           <p>Image Gallery built with HTML, CSS, JavaScript</p>
           <div class="btn-group" role="group" aria-label="demo button">
             <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/javapic" class="btn btn-default" role="button">Github</a>
-            <a href="javapic" class="btn btn-primary btn-md" role="button">Demo</a>
+            <a href="{% url 'javapic:index' %}" class="btn btn-primary btn-md" role="button">Demo</a>
           </div>
         </div>
       </div>
@@ -65,15 +65,15 @@
   <!-- thumbnail javapic_jquery -->
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <a href="javapic_jquery">
-          <img src="../static/images/thumbnail_javapic_jquery.png" height="667" width="1113" alt="...">
+        <a href="{% url 'javapic_jquery:index' %}">
+          <img src="../static/images/thumbnail_javapic_jquery.png" height="667" width="1113" alt="thumbnail for javapic jquery demo">
         </a>
         <div class="caption">
           <h3>Javapic jQuery</h3>
           <p>Image Gallery built with HTML, CSS, jQuery</p>
           <div class="btn-group" role="group" aria-label="demo button">
             <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/javapic_jquery" class="btn btn-default" role="button">Github</a>
-            <a href="javapic_jquery" class="btn btn-primary btn-md" role="button">Demo</a>
+            <a href="{% url 'javapic_jquery:index' %}" class="btn btn-primary btn-md" role="button">Demo</a>
           </div>
         </div>
       </div>
@@ -82,15 +82,15 @@
     <!-- thumbnail forum -->
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <a href="forum">
-          <img src="../static/images/thumbnail_forum.png" height="667" width="1113" alt="...">
+        <a href="{% url 'forum' %}">
+          <img src="../static/images/thumbnail_forum.png" height="667" width="1113" alt="thumbnail for mock forum demo">
         </a>
         <div class="caption">
           <h3>Forum</h3>
           <p>AJAX GET and POST with Google Sheets API</p>
           <div class="btn-group" role="group" aria-label="demo button">
             <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/forum" class="btn btn-default" role="button" role="button">Github</a>
-            <a href="forum" class="btn btn-primary btn-md" role="button">Demo</a>
+            <a href="{% url 'forum' %}" class="btn btn-primary btn-md" role="button">Demo</a>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@
   <!-- thumbnail zen mockup -->
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <a href="zen_mockup">
+        <a href="{% url 'zen_mockup' %}">
           <img src="../static/images/thumbnail_zen_mockup.png" height="667" width="1113" alt="thumbnail for zen mockup">
         </a>
         <div class="caption">
@@ -107,7 +107,7 @@
           <p>Demonstration of CSS to spec</p>
           <div class="btn-group" role="group" aria-label="demo button">
             <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/zen_mockup" class="btn btn-default" role="button">Github</a>
-            <a href="zen_mockup" class="btn btn-primary btn-md" role="button">Demo</a>
+            <a href="{% url 'zen_mockup' %}" class="btn btn-primary btn-md" role="button">Demo</a>
           </div>
         </div>
       </div>
@@ -116,15 +116,15 @@
   <!-- thumbnail placeholder -->
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <a href="#">
-          <img src="http://placehold.it/1900x950" alt="placeholder">
+        <a href="">
+          <img src="http://placehold.it/1900x950" alt="thumnail for placeholder">
         </a>
         <div class="caption">
           <h3>Placeholder</h3>
           <p>This is a placeholder for this Portfolio</p>
           <div class="btn-group" role="group" aria-label="demo button">
             <a href="https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio" class="btn btn-default" role="button">Github</a>
-            <a href="#" class="btn btn-primary btn-md" role="button">Demo</a>
+            <a href="" class="btn btn-primary btn-md" role="button">Demo</a>
           </div>
         </div>
       </div>

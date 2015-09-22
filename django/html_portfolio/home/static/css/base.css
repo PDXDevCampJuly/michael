@@ -9,3 +9,6 @@ img[alt="twitter icon to connect"] {
   border: initial;
   border-radius: initial;
 }
+small {
+  font-size: 0.6em !important;
+}

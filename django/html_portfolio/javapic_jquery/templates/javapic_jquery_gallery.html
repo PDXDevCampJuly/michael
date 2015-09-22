@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="{% static "css/style_javapic.css" %}">
   {% endblock %}
 
-    <title>gallery | mple by michael williams</title>
+    {% block title %} gallery. Javapic jQuery {% endblock %}
 {% endblock %}
+
+{% block navbar_subtext %} gallery. Javapic jQuery {% endblock %}
 
 {% block body %}
 <main class="gallery_page">

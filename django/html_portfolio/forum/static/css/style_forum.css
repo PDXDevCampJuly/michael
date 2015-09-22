@@ -38,4 +38,10 @@ section p {
     }
 }
 
-
+/* ---------- django custom css ---------- */
+.container {
+  padding-top: 50px;
+}
+section {
+  height: 325px;
+}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-def javapic_jquery(request):
+def index(request):
     """ main page with image slider """
     return render(request, 'javapic_jquery.html')
 

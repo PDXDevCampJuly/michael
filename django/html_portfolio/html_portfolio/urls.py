@@ -8,8 +8,8 @@ from django.conf.urls import include, url
     # -----------------------------------------------
 
 urlpatterns = [
-    url(r'^javapic/', include('javapic.urls')),
-    url(r'^javapic_jquery/', include('javapic_jquery.urls')),
+    url(r'^javapic/', include('javapic.urls', namespace='javapic')),
+    url(r'^javapic_jquery/', include('javapic_jquery.urls', namespace='javapic_jquery')),
     url(r'^zen_mockup/', include('zen_mockup.urls')),
     url(r'^forum/', include('forum.urls')),
 

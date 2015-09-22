@@ -1,32 +1,20 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load staticfiles %}
 
-<html>
-<head>
-    <title>Mini CSS Zen Garden: The Beauty of CSS Design</title>
+{% block head %}
+  {% include "base_metadata.html" %}
+  {% include "base_css_links.html" %}
 
+  {% block css_links %}
     <link rel="stylesheet" media="screen" href="{% static "css/zen_mockup.css" %}">
+  {% endblock %}
 
-</head>
+    {% block title %} Mini CSS Zen Garden: The Beauty of CSS Design {% endblock %}
+{% endblock %}
 
-<!--
+{% block navbar_subtext %} Javapic {% endblock %}
 
-
-    This is code has been borrowed from CSSZenGarden.com.
-
-    I've simplied things a little bit for our course, but there
-    may still be structures in this file you're not familiar with.
-    That's okay! Just look them up ;)
-
-    Remember that you cannot modify this file to make your CSS work.
-    The mock-up you're trying to match is actually a screenshot
-    of my example page – so yes, it is do-able.
-
-    Remember: Code is Cheap, Practice is Priceless.
-        
--->
-
-<body id="css-zen-garden">
+{% block body %}
 <div class="page-wrapper">
 
     <section class="intro">
@@ -57,7 +45,7 @@
             <p>Download the sample <a href="/examples/index" title="This page's source HTML code, not to be modified.">HTML</a> and <a href="/examples/style.css" title="This page's sample CSS, the file you may modify.">CSS</a> to work on a copy locally. Once you have completed your masterpiece (and please, don&#8217;t submit half-finished work) upload your <abbr title="Cascading Style Sheets">CSS</abbr> file to a web server under your control. <a href="http://www.mezzoblue.com/zengarden/submit/" title="Use the contact form to send us your CSS file">Send us a link</a> to an archive of that file and all associated assets, and if we choose to use it we will download it and place it on our server.</p>
         </article>
 
-        <footer>
+        <div class="footer">
             <a href="http://validator.w3.org/check/referer" title="Check the validity of this site&#8217;s HTML" class="zen-validate-html">HTML</a>
             <a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of this site&#8217;s CSS" class="zen-validate-css">CSS</a>
         </footer>
@@ -98,6 +86,8 @@
 
 
 </div>
+{% endblock %}
 
-</body>
-</html>
+{% block js_scripts %}
+  {% include "base_js_scripts.html" %}
+{% endblock %}

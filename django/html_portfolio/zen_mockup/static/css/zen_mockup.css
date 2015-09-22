@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Nova+Square);
 
 /* layout */
-body {
+.page-wrapper {
   font-family: sans-serif;
   background-color: #eee;
   color: #000;
@@ -78,10 +78,10 @@ main article + article {
 
 
 /* footer -- HTML, CSS tags */
-footer {
+.footer {
   text-align: right;
 }
-footer a {
+.footer a {
   background-color: #918774;
   color: #FFF6E0;;
   padding: 7px 10px;
@@ -129,4 +129,12 @@ aside a {
   aside a {
     margin-left: 0;
   }
+}
+
+/* ---------- django custom css ---------- */
+.page-wrapper {
+    box-sizing: content-box;
+}
+footer {
+  margin-top: 25px;
 }

@@ -29,7 +29,7 @@ Loading jQuery
 ```
 
 ### Response
-14 September 2015
+14 Sep 2015
 
 ##### html__portfolio/urls.py >>>
 
@@ -82,4 +82,37 @@ August 16, 2015
 * If you plan on taking this further, i.e. making this public, consider breaking your templates down further. Consider how could all of your apps extend from base, and add their needed JS and CSS
 ```
 
+### Response
+22 Sep 2015
+
+Changes annotated below. Thanks for the heads-up about using Django comments instead of html comments. 
+
+##### home/urls.py:
+no action taken as we discussed, the import is needed
+
+##### html_portfolio/urls.py:
+L2 — commented-out “from django.contrib import admin” for potential use later
+
+##### home/base.html:
+L49-62 — removed old commented-out html
+
+##### home/about.html:
+L1 — removed “<!DOCTYPE html>”
+L16 — removed old commented-out html
+L21 — removed old commented-out html
+
+Many changes have been implemented since the last review. New additions include:
+
+##### html_portfolio/urls.py:
+‘namespace’ defined to distinguish the javapic app versus javapic jQuery
+
+##### home/base:
+There are now several base html templates: metadata, css_links, and js_scripts. As suggested in the previous review, this provides the flexibility for each app to utilize these base templates when extending the base.html. 
+
+Within base.html there are now additional django block tags providing inheritance options for the metadata, css_links, title, navbar_subtext, and the js_scripts on top of the base html templates listed above. 
+
+The project now has a consistent navbar and footer throughout each app.  
+
+---
+Let me know, if I can help with anything. Thanks again for the help.
 

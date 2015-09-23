@@ -1,7 +1,7 @@
 # HTML Portfolio Code Review
 
 ### Reviewed by: [Max Resnick](https://github.com/PDXDevCampJuly/max-resnick)
-August 12, 2015
+September 12, 2015
 
 ```
 Overall
@@ -116,3 +116,16 @@ The project now has a consistent navbar and footer throughout each app.
 ---
 Let me know, if I can help with anything. Thanks again for the help.
 
+### Reviewed by: [Max Resnick](https://github.com/PDXDevCampJuly/max-resnick)
+September 22, 2015
+
+```
+
+## "Go ahead a turn in!"
+
+```
+
+### Response
+22 September 2015
+
+Thanks Max for your help.

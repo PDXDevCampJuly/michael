@@ -118,7 +118,7 @@ Let me know, if I can help with anything. Thanks again for the help.
 ### Reviewed by: [Max Resnick](https://github.com/PDXDevCampJuly/max-resnick)
 September 22, 2015
 
-## "Go ahead a turn in!"
+## "Go ahead and turn in!"
 
 ### Response
 22 September 2015

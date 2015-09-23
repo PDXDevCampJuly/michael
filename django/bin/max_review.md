@@ -61,8 +61,7 @@ Let me know, if I may clarify any changes or if you have some suggestions on whe
 August 16, 2015
 
 ```
-
-`home/urls.py`
+home/urls.py`
 --------------
 
 * L2 can be 86’d
@@ -120,9 +119,7 @@ Let me know, if I can help with anything. Thanks again for the help.
 September 22, 2015
 
 ```
-
 ## "Go ahead a turn in!"
-
 ```
 
 ### Response

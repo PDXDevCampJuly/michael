@@ -7,7 +7,7 @@ Python-based Developer Bootcamp with [PDX Code Guild](https://pdxcodeguild.com),
 ##Capstone Project: 
 [Networker](https://github.com/williamsmichael/networker) is a responsive web application for constructing private groups built with Python, Django, Postgres, JavaScript, jQuery, and Bootstrap. 
 
-###Accelerator Projects:
+##Accelerator Projects:
 [HTML_Portfolio](https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio) is a collaboration of projects from the accelerator incorporated into Django.
 
 [Mock Forum](https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/html_css_js/mockForum) is a forum built with JavaScript, jQuery, Google Spreadsheets API, AJAX, and Bootstrap.

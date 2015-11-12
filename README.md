@@ -1,4 +1,4 @@
-# Developer Accelerator, 14-weeks
+# Developer Accelerator, 16-weeks
 
 27 July - 10 November 2015
 

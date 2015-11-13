@@ -16,7 +16,7 @@ Python-based Developer Bootcamp with [PDX Code Guild](https://pdxcodeguild.com),
 
 [Javapic jQuery](https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/javapic_jquery) is an image gallery focused on only using jQuery for the functionality. Photos provided by [John Broxton](https://github.com/johnbroxton).
 
-[Conect4](https://github.com/williamsmichael/ChelsDevCamp_July27/tree/master/Conect4_game) is based on the original Connect Four boardgame built with Python. Pair Programmed with [Chelsea Dover](https://github.com/Chelsea-Dover).
+[Conect4](hhttps://github.com/PDXDevCampJuly/michael_devCamp/tree/master/python/Conect4_game) is based on the original Connect Four boardgame built with Python. Pair Programmed with [Chelsea Dover](https://github.com/Chelsea-Dover).
 
 [Play21](https://github.com/williamsmichael/daniel_pearl/blob/master/python/Play21.py) is based on the original casino game Blackjack built with Python. Pair-programmed with [Daniel Pearl](https://github.com/Danielpearl).
 

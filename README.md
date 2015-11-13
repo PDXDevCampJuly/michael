@@ -1,4 +1,4 @@
-# Developer Accelerator, 16-weeks
+# Developer Accelerator, 15-weeks
 
 27 July - 10 November 2015
 
@@ -16,9 +16,9 @@ Python-based Developer Bootcamp with [PDX Code Guild](https://pdxcodeguild.com),
 
 [Javapic jQuery](https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/django/html_portfolio/javapic_jquery) is an image gallery focused on only using jQuery for the functionality. Photos provided by [John Broxton](https://github.com/johnbroxton).
 
-[Conect4](hhttps://github.com/PDXDevCampJuly/michael_devCamp/tree/master/python/Conect4_game) is based on the original Connect Four boardgame built with Python. Pair Programmed with [Chelsea Dover](https://github.com/Chelsea-Dover).
+[Conect4](https://github.com/PDXDevCampJuly/michael_devCamp/tree/master/python/Conect4_game) is based on the original Connect Four boardgame. Pair-programmed with [Chelsea Dover](https://github.com/Chelsea-Dover) and built with Python based on the principles of the MVC framework and unittests.
 
-[Play21](https://github.com/williamsmichael/daniel_pearl/blob/master/python/Play21.py) is based on the original casino game Blackjack built with Python. Pair-programmed with [Daniel Pearl](https://github.com/Danielpearl).
+[Play21](https://github.com/PDXDevCampJuly/michael_devCamp/blob/master/python/Play21.py) is based on the original casino game Blackjack built with Python. Pair-programmed with [Daniel Pearl](https://github.com/Danielpearl).
 
 [Angry Dice](https://github.com/PDXDevCampJuly/michael_devCamp/blob/master/python/dice/angry_dice.py) is based on the original boardgame Angry Dice and built with Python.
 

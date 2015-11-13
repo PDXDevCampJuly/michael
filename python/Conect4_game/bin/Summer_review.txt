@@ -1,0 +1,34 @@
+Michael's Connect 4 Code Review
+---------------------------------
+
+Hi Michael!  First thing I did was download your code and I played it on the console. I love the layout! Straight forward and easy to follow. Simple! I like that you don't have to worry about putting in a name. You just play! Really fun to play and I loved your used of the UniCode circles for your tokens. Great job! 
+----------------------------
+First, the view! -
+
+The only thing that really jumped out at the from the beginning was the import 
+LN 3 --"from itertools import zip_longest"--
+
+It didn't look like you used it at all in your code. Plus Pycharm complained it wasn't used either. I had done that in one of my assignments and Tiffany simply make sure if you have something to use it, or simply delete. (Same with theatre stage work. If you bring a prop on stage - use it)
+
+LN 31 - I think this is a great function that converts any input outside of your 1-7 to an int and then checks that is quite awesome. No fuss, no muss. 
+
+Otherwise, your view file looks really great. Straight forward and easy to follow. And your comments are short, sweet, and understandable.
+------------------------------------
+
+Model review!-
+
+Again, all of your comments are incredibly explanitory and the functions are short and sweet.I haven't seen anything redundant yet.
+---------------------------------------------
+Controller review! -
+
+The check_winner function was a bear to figure out, but it looks like you figured it out pretty well. There may be a way to compact it a little more since you have 4 'for loops', but I am supposing that it why you pulled in the itertools. 
+
+--------------
+
+Ok, I think this code is compact and concise.  I feel I follow it pretty well with how you were attacking it and your comments on each file and function. Each function seems straight forward. I can see how you simplified looking at this and how it's played. 
+
+Thank you for letting me review your code! I totally see how I over thought some things on my code. Being a beginner at Python, I love how simple and straight forward your code it. Lovely! 
+
+
+
+

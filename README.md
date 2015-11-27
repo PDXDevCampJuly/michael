@@ -2,7 +2,7 @@
 
 27 July - 10 November 2015
 
-Python-based Developer Bootcamp with [PDX Code Guild](https://pdxcodeguild.com), intensive, full time, hands-on immersive course that combines individual projects and developer practices in agile, source control, testing, debugging, paired-programming, and group work. Covers full stack web development and programming with Python, Django, JavaScript, jQuery, HTML5, CSS3, Postgres, and SQL.
+Python-based Developer Bootcamp with [PDX Code Guild](https://pdxcodeguild.com), intensive, full time, hands-on immersive course that combines individual projects and developer practices in agile, source control, testing, debugging, paired-programming, and group work. Covers full stack web development and programming with Python, Django, JavaScript, jQuery, HTML5, CSS3, Postgres, and SQL. `>>> PROJECT LIST BELOW <<<`
 
 ##Capstone Project: 
 [Networker](https://github.com/williamsmichael/networker) is a responsive web application for constructing private groups built with Python, Django, Postgres, JavaScript, jQuery, and Bootstrap. 
